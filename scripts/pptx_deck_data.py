@@ -6,15 +6,48 @@ Shared fiction for examples:
   Program  Project Aurora — 5nm connectivity SoC
   Team     Atlas Platform (DV, integration, bring-up)
   Lead     Alex Chen (EM) → reports to VP Eng Morgan Lee
-  Window   2026 H1 / Q2 unless noted
+
+Master chronology (must stay consistent across examples):
+  2026-03-16  01 tech review presented; decide AON Option B by 2026-03-20
+  2026-04-10  RTL freeze held (enabled by Option B)
+  2026-04-28  Tape-out
+  2026-05-12  First silicon in lab
+  2026-05-15  Day-3 boot
+  2026-05-16  02 results readout; sample plan ask by 2026-05-22; sample ship 2026-06-30
+  2026-05-18  03 org health 1:1
+  2026-05-20  06 +1 senior DV request
+  2026-05-25  04 farm ROI (lagging KPIs: freeze 4/10, boot 5/15); expand ask by 2026-05-30
+  2026-05-28  05 HelixSim procurement; decide by 2026-06-05
+  2026-06-12  07 H2 roadmap
+  2026-06-26  09 Q2 QBR lookback
+  2026-07-01  08 Q3 period-start kickoff
 """
 from __future__ import annotations
 
+from datetime import date
 from typing import Any
 
 # --- shared example universe constants ---
 EX_META = "Atlas Platform  ·  Project Aurora  ·  NovaSemi  ·  2026"
 EX_FOOTER = "Confidential template example — fictional program data"
+
+# Machine-checkable anchors (tests import these)
+AURORA_TIMELINE = {
+    "01_decide_by": date(2026, 3, 20),
+    "01_freeze_target": date(2026, 4, 10),
+    "rtl_freeze_held": date(2026, 4, 10),
+    "tape_out": date(2026, 4, 28),
+    "first_silicon": date(2026, 5, 12),
+    "day3_boot": date(2026, 5, 15),
+    "02_present": date(2026, 5, 16),
+    "02_sample_ask_by": date(2026, 5, 22),
+    "sample_ship": date(2026, 6, 30),
+    "04_present": date(2026, 5, 25),
+    "04_ask_by": date(2026, 5, 30),
+    "06_decide_by": date(2026, 5, 20),
+    "09_qbr": date(2026, 6, 26),
+    "08_q3_kickoff": date(2026, 7, 1),
+}
 
 
 def T(kicker, title, subtitle, bluf_title, bluf_status, bluf_body, body_slides, options, ask, ask_notes):
@@ -108,11 +141,11 @@ SCENARIOS: dict[str, dict[str, Any]] = {
         "example": E(
             "SCENARIO 01  ·  EXAMPLE  ·  AURORA POWER DOMAIN",
             "Aurora: always-on domain clock decision",
-            "Design freeze for AON clock mux — needed before RTL freeze 2026-06-20",
+            "Design freeze for AON clock mux — needed before RTL freeze 2026-04-10",
             "BLUF — approve phased clock mux",
-            "Status: YELLOW  ·  Recommend Option B  ·  Decide by Fri 2026-05-16 (Morgan)",
+            "Status: YELLOW  ·  Recommend Option B  ·  Decide by Fri 2026-03-20 (Morgan)",
             "Goal: freeze AON clock architecture so DV can lock assertions before RTL freeze.\n\n"
-            "Difficulty: Full dual-source mux + glitchless switch needs +3 eng-weeks and threatens 6/20 freeze.\n\n"
+            "Difficulty: Full dual-source mux + glitchless switch needs +3 eng-weeks and threatens 4/10 freeze.\n\n"
             "Recommendation: Option B — single-source AON at freeze; dual-source behind feature strap for revB.\n\n"
             "If no decision by Friday: default is Option C (keep dual mux in RTL) with accepted freeze slip risk.",
             [
@@ -120,8 +153,8 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                     "Problem, goal, constraints",
                     "Problem: Always-on domain can brown-out during deep-sleep exit if clock source switches mid-transition; "
                     "field risk on mobile SKUs.\n\n"
-                    "Success: AON boots glitch-free across 3 corners in UVM; RTL freeze stays 6/20.\n\n"
-                    "Constraints: freeze 6/20 · package power budget · PMIC IP delivers 5/28 · Atlas has 2 clock experts.",
+                    "Success: AON boots glitch-free across 3 corners in UVM; RTL freeze stays 4/10.\n\n"
+                    "Constraints: freeze 4/10 · package power budget · PMIC IP delivers 3/28 · Atlas has 2 clock experts.",
                     "Customer SKU power-exit is the business hook.",
                 ),
                 (
@@ -136,7 +169,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 (
                     "Risks & mitigations (top 3)",
                     "1. RCOSC accuracy in cold boot — mitigate: characterize in bring-up; owner: Mina (analog).\n"
-                    "2. Late PMIC IP change — mitigate: freeze interface table 5/28; owner: Ken (IP).\n"
+                    "2. Late PMIC IP change — mitigate: freeze interface table 3/28; owner: Ken (IP).\n"
                     "3. DV coverage hole on sleep-exit — mitigate: 2 dedicated sequences this sprint; owner: Priya.\n\n"
                     "Residual after B: no glitchless dual-switch on first silicon (accepted for revA).",
                     "Residual risk is explicit for silicon.",
@@ -144,13 +177,13 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             ],
             [
                 ["Option", "Outcome", "Schedule", "Risk", "Capacity"],
-                ["A Full dual mux now", "Complete AON switch", "Freeze → 7/04", "High DV", "+3 eng-wk"],
-                ["B Phased strap (REC)", "XO path frozen", "Freeze 6/20 holds", "Med", "+0.5 eng-wk"],
+                ["A Full dual mux now", "Complete AON switch", "Freeze → 5/01", "High DV", "+3 eng-wk"],
+                ["B Phased strap (REC)", "XO path frozen", "Freeze 4/10 holds", "Med", "+0.5 eng-wk"],
                 ["C Keep dual in RTL", "No scope cut", "Likely slip", "Accepted freeze risk", "0"],
             ],
             "Decision needed: Approve Option B for Aurora AON clock at freeze.\n"
             "Owner: Morgan Lee (VP Eng) with Alex Chen executing.\n"
-            "By: Friday 2026-05-16 EOD.\n\n"
+            "By: Friday 2026-03-20 EOD.\n\n"
             "Follow-ups: publish RFC-AURORA-117 rev; notify PMIC + package; add revB dual-mux to H2 roadmap.",
             "Land B; do not re-open full dual-mux design in this room.",
             "Aurora AON clock: freeze on time via phased strap, dual-mux deferred to revB.",
@@ -194,10 +227,11 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "Aurora first silicon: day-3 boot achieved",
             "Bring-up readout for VP Eng + program — sample path unlocked",
             "BLUF — first silicon green on critical path",
-            "Status: GREEN  ·  Day-3 Linux boot on A0  ·  Ask: approve customer sample plan for 6/30",
-            "Outcome: Aurora A0 brought up; UART + DDR init + Linux prompt on day 3 (target was day 5).\n\n"
+            "Status: GREEN  ·  Day-3 Linux boot on A0 (silicon 5/12)  ·  Ask: sample plan for 6/30",
+            "Outcome: Aurora A0 (fab return 2026-05-12) brought up; UART + DDR + Linux prompt on day 3 (target day 5).\n\n"
             "Impact: unlocks Tier-1 sample commit for end of June; de-risks H2 design-win demo.\n\n"
-            "Residual: USB3 not yet stable (known; tracked under ECO-22); not on sample critical path.",
+            "Residual: USB3 not yet stable (ECO-22); not on sample critical path.\n"
+            "Prior: AON Option B (3/20) held RTL freeze 4/10 → tape-out 4/28 → this bring-up.",
             [
                 (
                     "Goal recall (period start)",
@@ -216,7 +250,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 ),
                 (
                     "How we got here + learnings",
-                    "1. Phased AON clock (Option B) kept freeze — paid off in clean bring-up.\n"
+                    "1. Phased AON clock (Option B, decided 3/20) held freeze 4/10 — paid off in clean bring-up.\n"
                     "2. Pre-silicon FPGA catch of DDR training bug avoided day-1 hang.\n"
                     "3. Shared DV farm cut regression from 18h → 6h (see benefit deck).\n\n"
                     "Keep: freeze discipline. Stop: ad-hoc board rework without ECO. Start: sample checklist owner.",
@@ -227,11 +261,11 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 ["Next step", "Owner", "Date", "Note"],
                 ["Customer sample plan (REC)", "Alex + PM", "2026-05-22", "Needs Morgan approve"],
                 ["USB3 stabilize", "IO team", "2026-06-10", "Not sample-blocking"],
-                ["Cold-corner AON retest", "Priya", "2026-05-28", "From tech residual"],
+                ["Cold-corner AON retest", "Priya", "2026-05-25", "From tech residual"],
             ],
             "Ask: Approve customer sample plan targeting 2026-06-30 shipment to Tier-1.\n"
             "Owner: Morgan Lee endorsement; Alex executes checklist.\n"
-            "By: 2026-05-22 steering.\n\nNo HC ask in this readout (see resource deck if sample surge).",
+            "By: 2026-05-22 steering (presentation date ~2026-05-16).\n\nNo HC ask here (see resource deck if sample surge).",
             "Celebrate briefly; land sample approval.",
             "First silicon day-3 boot → ask for Tier-1 sample plan approval.",
         ),
@@ -281,13 +315,14 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "BLUF — delivery green, capacity tight",
             "Delivery: GREEN  ·  People: YELLOW  ·  Ask: endorse +1 DV req (see resource deck)",
             "Mandate: own Aurora integration DV + first-silicon bring-up for NovaSemi connectivity SoC.\n\n"
-            "Outcomes: (1) RTL freeze hit 6/20 path (2) day-3 boot (3) DV farm ROI visible.\n\n"
+            "Outcomes: (1) RTL freeze held 4/10 (2) day-3 boot 5/15 (3) DV farm ROI visible.\n\n"
             "Top risk: single-threaded on high-speed IO DV (Priya overloaded); backup is junior only.",
             [
                 (
                     "Outcomes vs commits",
-                    "Freeze-ready AON decision — Hit — Option B landed May 16\n"
-                    "Day-5 boot target — Hit — actual day 3\n"
+                    "Freeze-ready AON decision — Hit — Option B landed Mar 20\n"
+                    "RTL freeze 4/10 — Hit — held\n"
+                    "Day-5 boot target — Hit — actual day 3 (silicon 5/12)\n"
                     "USB3 bring-up complete — Partial — stable path slipped to June 10\n"
                     "Team voluntary attrition — Hit — 0 exits in Q2",
                     "Honest partial on USB3.",
@@ -304,7 +339,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 (
                     "People & capability",
                     "Critical path: Priya (HS IO DV) has no senior backup.\n"
-                    "Mina (analog liaison) 0.5 FTE borrowed from IP team through June.\n"
+                    "Mina (analog liaison) 0.5 FTE borrowed from IP team through mid-Q2.\n"
                     "Hiring: 1 req open 4 weeks — pipeline thin for senior DV.\n\n"
                     "Ask is structural, not a complaint: protect sample path with +1 DV.",
                     "Facts + ask, no blame.",
@@ -316,8 +351,8 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 ["Reprioritize only", "Drop non-Aurora support", "Partner friction"],
                 ["None", "Continue", "Accept yellow people risk"],
             ],
-            "Primary ask: Endorse opening senior DV requisition (detail in resource request 2026-05-20).\n"
-            "Decision by: 2026-05-20 1:1.\n"
+            "Primary ask: Endorse opening senior DV requisition (detail in resource request ~2026-05-20).\n"
+            "Decision by: 2026-05-18 1:1 (after first-silicon readout).\n"
             "Air cover: restate Aurora sample > internal tool polish in Thursday steering.",
             "One ask; point to deck 06 for business case.",
             "Atlas healthy on delivery; yellow on IO DV single-thread → endorse hire.",
@@ -365,9 +400,10 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "Continue vs expand license seats for Aurora + next program",
             "BLUF — continue farm; expand +20 seats",
             "Recommend: EXPAND  ·  Payback ~5 months on avoided spin risk (assumptions labeled)",
+            "Presentation window: ~2026-05-25 (after freeze 4/10 and day-3 boot 5/15).\n\n"
             "Investment: 1.5 eng-q build + $180K/yr licenses (example dollars).\n\n"
             "Benefit: regression wall-clock 18h → 6h; enabled extra sleep-exit coverage that caught AON bug pre-silicon.\n\n"
-            "Ask: expand seat pool +20 for H2 multi-program use.",
+            "Ask: expand seat pool +20 for H2 multi-program use (decide by 2026-05-30).",
             [
                 (
                     "Business problem attacked",
@@ -379,8 +415,8 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                     "Impact chain",
                     "Farm online → 3× parallel regressions → more loops per week → "
                     "DDR training bug found on FPGA+farm combo → avoided likely day-1 hang on A0.\n\n"
-                    "Leading metric: median regression 6h (n=12 weeks).\n"
-                    "Lagging: freeze held 6/20; day-3 boot.",
+                    "Leading metric: median regression 6h (n=12 weeks through 2026-05-20).\n"
+                    "Lagging (already realized before this deck): RTL freeze held 2026-04-10; day-3 boot 2026-05-15.",
                     "Causal language carefully: farm contributed; not sole cause.",
                 ),
                 (
@@ -399,8 +435,9 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             ],
             "Decision: Approve Expand +20 seats for H2.\n"
             "Owner: Morgan (budget) / Alex (utilization report quarterly).\n"
-            "By: 2026-05-30 finance window.\n"
-            "Assumption sheet: DOC-FARM-ROI-04.",
+            "By: 2026-05-30 finance window (after this 5/25 readout; before H2 planning).\n"
+            "Assumption sheet: DOC-FARM-ROI-04.\n"
+            "Note: lagging KPIs (4/10 freeze, 5/15 boot) pre-date the ask deadline.",
             "Portfolio decision with labeled assumptions.",
             "DV farm ROI → expand seats for H2 multi-program.",
         ),
@@ -444,8 +481,8 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "BLUF — renew HelixSim 3yr +20 seats",
             "Recommend: HelixSim  ·  Term: 3yr  ·  Decide by 2026-06-05 (45-day vendor lead)",
             "Buy: HelixSim concurrent licenses for RTL/gate sim (Aurora + WiFi IP).\n\n"
-            "Why now: contract ends 2026-07-31; farm expand (deck 04) needs seats or queues explode.\n\n"
-            "If no / late: sim queue >> overnight; freeze-class slips on next program.",
+            "Why now: contract ends 2026-07-31; farm expand approved path (deck 04, ask by 5/30) needs seats.\n\n"
+            "If no / late: sim queue >> overnight; H2 multi-program slips (post-sample).",
             [
                 (
                     "Requirements (must / should)",
@@ -514,7 +551,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "Atlas: +1 senior DV for Aurora sample surge",
             "Context B staffing — unplanned 20–30% already burning the plan",
             "BLUF — approve 1 senior DV req",
-            "Ask: +1 senior DV  ·  If no: USB3 + sample surge slip  ·  Decide by 2026-05-20",
+            "Ask: +1 senior DV  ·  If no: USB3 + sample surge slip  ·  Decide by 2026-05-20 (post-silicon)",
             "Outcome unlocked: Tier-1 sample 6/30 with HS IO coverage and senior backup for Priya.\n\n"
             "Gap: high-speed IO DV is single-threaded; Q2 unplanned already ~20% (context A lookback).\n\n"
             "Headcount math (context B): demand includes 25% unplanned buffer — we are understaffed vs sample path.",
@@ -544,7 +581,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 ["No hire + descope", "Drop USB3 from sample", "0", "SKU feature miss"],
             ],
             "Decision: Approve full +1 senior DV requisition.\n"
-            "Open req by: 2026-05-22.\n"
+            "Open req by: 2026-05-22 (same week as sample-plan steering).\n"
             "Air cover: in 5/22 steering, restate Aurora sample > non-Aurora support tickets.",
             "One role, crisp if-no.",
             "Single-thread IO DV → +1 senior req with explicit sample slips if no.",
@@ -598,10 +635,11 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             [
                 (
                     "Now / Next / Later",
-                    "NOW (through June): sample checklist, USB3, cold-corner AON.\n"
+                    "NOW (through June): sample checklist (ship 6/30), USB3, cold-corner AON.\n"
                     "NEXT (Q3): revB AON dual mux; farm/seat expand; +1 DV ramp.\n"
                     "LATER (Q4): WiFi IP integration or explicit park; next-node exploration spike.\n\n"
-                    "Gates: sample 6/30 · revB RTL target 9/15 · WiFi decision gate 8/01.",
+                    "Gates: sample 6/30 · revB RTL target 9/15 · WiFi decision gate 8/01.\n"
+                    "Already done earlier H1: AON B (3/20), freeze 4/10, TO 4/28, day-3 boot 5/15.",
                     "Time-ordered themes.",
                 ),
                 (
@@ -666,11 +704,11 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "Atlas Q3 2026 period commit",
             "Kickoff after sample path — revB + harden",
             "BLUF — endorse balanced Q3 plan (Option B)",
-            "Period goal: sample support + revB AON start  ·  Ask: Endorse Option B 2026-07-01",
-            "COMMIT: Tier-1 sample support SLA; revB AON dual-mux RTL start; USB3 closed.\n"
+            "Period goal: sample support + revB AON start  ·  Ask: Endorse Option B on 2026-07-01 kickoff",
+            "COMMIT: Tier-1 sample support SLA (samples shipped 6/30); revB AON dual-mux RTL start; USB3 closed.\n"
             "STRETCH: WiFi IP bring-up spike.\n"
             "OUT: sensor hub; second customer custom board.\n\n"
-            "Assumes +1 DV offer accepted by mid-July.",
+            "Assumes +1 DV offer accepted by mid-July (req opened ~5/22).",
             [
                 (
                     "Outcomes & success metrics",
@@ -682,7 +720,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
                 ),
                 (
                     "Milestones & working agreements",
-                    "7/15 USB3 exit · 8/01 WiFi gate · 9/15 revB RTL review\n\n"
+                    "Milestones after sample: 7/15 USB3 exit · 8/01 WiFi gate · 9/15 revB RTL review\n\n"
                     "Weekly Atlas ops Mon; steering Thu; yellow risks in BLUF form to Morgan same day.\n"
                     "Intake rule from H2 roadmap remains law.",
                     "OS + gates.",
@@ -742,15 +780,16 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             "Atlas Q2 2026 QBR",
             "Leadership review — freeze, silicon, farm; people yellow carried",
             "BLUF — Q2 overall GREEN",
-            "Overall: GREEN  ·  Wins: freeze path, day-3 boot, farm ROI  ·  Carry: IO single-thread  ·  Ask: endorse Q3 B + HC",
-            "Achieved: AON freeze decision B; first silicon day-3 boot; DV farm value case.\n"
-            "Miss/partial: USB3 complete (to 6/10) — capacity unplanned 20%.\n"
-            "Next: endorse Q3 balanced plan + senior DV req.",
+            "Overall: GREEN  ·  Wins: freeze 4/10, day-3 boot 5/15, farm ROI  ·  Carry: IO single-thread  ·  Ask: Q3 B + HC",
+            "Q2 lookback (QBR ~2026-06-26): AON Option B (3/20); RTL freeze 4/10; TO 4/28; day-3 boot 5/15; sample plan on track 6/30.\n"
+            "Miss/partial: USB3 complete (to 6/10) — capacity unplanned ~20%.\n"
+            "Next: endorse Q3 balanced plan + senior DV req (opened 5/22).",
             [
                 (
                     "Scorecard vs commits",
-                    "AON freeze-ready decision — Hit — B approved 5/16\n"
-                    "Day-5 boot — Hit — day 3 actual\n"
+                    "AON freeze-ready decision — Hit — B approved 3/20\n"
+                    "RTL freeze 4/10 — Hit\n"
+                    "Day-5 boot — Hit — day 3 actual (silicon 5/12)\n"
                     "USB3 bring-up done Q2 — Partial — 6/10 forecast\n"
                     "0 attrition — Hit\n"
                     "Unplanned ≤15% — Miss — actual ~20%",
@@ -780,7 +819,7 @@ SCENARIOS: dict[str, dict[str, Any]] = {
             ],
             "Three takeaways: freeze+boot green; unplanned drove USB3 partial; support Q3 B + DV hire.\n"
             "Endorse P1/P2; WiFi remains stretch.\n"
-            "Decisions by: this QBR + follow-up 1:1 5/20.",
+            "Decisions by: this QBR (~6/26) + follow-up 1:1 into Q3 kickoff 7/01.",
             "QBR classic close.",
             "Q2 green overall; carry people risk; ask Q3 plan + HC.",
         ),
