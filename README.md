@@ -15,7 +15,7 @@ Capacity numbers live in one place: **[skills/shared/capacity-model.md](skills/s
 **情境簡報骨架**（技術報告、成果、管理成效、效益、採購、資源、路線圖、期初/期末，外商×竹科風格）：  
 **[skills/presentations/README.md](skills/presentations/README.md)**
 
-**可編輯 PPTX 標準模板（officecli）：**  
+**可編輯 PPTX（officecli 模板 + 情境範例）：**  
 **[skills/presentations/assets/README.md](skills/presentations/assets/README.md)** · 研究筆記 [research-deck-norms.md](skills/presentations/research-deck-norms.md)
 
 > 個人績效 / 年終自述模板：**尚未納入**（已明確延後）。

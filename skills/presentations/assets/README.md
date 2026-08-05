@@ -1,42 +1,53 @@
-# Presentation PPTX assets (skill reference)
+# Presentation PPTX assets
 
-**Standard editable report templates** generated with [officecli](https://officecli.ai), grounded in [research-deck-norms.md](../research-deck-norms.md) and outline skills `01`–`09`.
+Two packs per scenario (01–09):
 
-**Not included:** personal performance / annual self-review (deferred).
+| Pack | Path | Purpose |
+|------|------|---------|
+| **Template** | [`templates/`](templates/) | Placeholder structure — copy and fill |
+| **Example** | [`examples/`](examples/) | Filled **Aurora / NovaSemi / Atlas** storyline simulation |
 
-## How to use
+**Out of scope:** personal performance / annual self-review.
 
-1. Open the matching outline markdown under `skills/presentations/0N-*.md` for narrative guidance.  
-2. Copy the `.pptx` below and replace placeholders (`Team X`, `Program Alpha`, metrics).  
-3. Keep **BLUF → evidence → options → ask** spine.  
-4. Capacity: roadmap/period decks use **context A**; resource deck uses **context B** (`skills/shared/capacity-model.md`).
+## Shared example universe
 
-Regenerate all templates:
+| Field | Value |
+|-------|--------|
+| Company | NovaSemi (fictional IC design) |
+| Program | **Project Aurora** — 5nm connectivity SoC |
+| Team | **Atlas Platform** (DV, integration, bring-up) |
+| Lead | Alex Chen (EM) → VP Eng Morgan Lee |
+| Arc | Tech decision → silicon results → org health → farm ROI → sim licenses → +1 DV → H2 roadmap → Q3 kickoff → Q2 QBR |
+
+Stories cross-link (e.g. AON Option B in 01 pays off in 02/09; hire ask in 03/06).
+
+## Index
+
+| # | Scenario | Template | Example |
+|---|----------|----------|---------|
+| 01 | Technical review | [templates/01-technical-review.pptx](templates/01-technical-review.pptx) | [examples/01-technical-review.pptx](examples/01-technical-review.pptx) |
+| 02 | Results / demo | [templates/02-results-demo.pptx](templates/02-results-demo.pptx) | [examples/02-results-demo.pptx](examples/02-results-demo.pptx) |
+| 03 | Management effectiveness | [templates/03-management-effectiveness.pptx](templates/03-management-effectiveness.pptx) | [examples/03-management-effectiveness.pptx](examples/03-management-effectiveness.pptx) |
+| 04 | Benefit / ROI | [templates/04-benefit-value.pptx](templates/04-benefit-value.pptx) | [examples/04-benefit-value.pptx](examples/04-benefit-value.pptx) |
+| 05 | Procurement | [templates/05-procurement-proposal.pptx](templates/05-procurement-proposal.pptx) | [examples/05-procurement-proposal.pptx](examples/05-procurement-proposal.pptx) |
+| 06 | Resource / HC | [templates/06-resource-request.pptx](templates/06-resource-request.pptx) | [examples/06-resource-request.pptx](examples/06-resource-request.pptx) |
+| 07 | Roadmap | [templates/07-roadmap.pptx](templates/07-roadmap.pptx) | [examples/07-roadmap.pptx](examples/07-roadmap.pptx) |
+| 08 | Period start | [templates/08-period-start-planning.pptx](templates/08-period-start-planning.pptx) | [examples/08-period-start-planning.pptx](examples/08-period-start-planning.pptx) |
+| 09 | Period end / QBR | [templates/09-period-end-review.pptx](templates/09-period-end-review.pptx) | [examples/09-period-end-review.pptx](examples/09-period-end-review.pptx) |
+
+## Layout rules (optimized)
+
+- No default title placeholder on content/BLUF slides (prevents kicker collision).
+- Title band → status bar (BLUF) → card body → footer meta.
+- Margins ≥ 1.4cm; navy status bar; options tables with navy header.
+- Real newlines only (never literal `\n` in text).
+
+## Regenerate
 
 ```bash
 python3 scripts/generate_report_pptx_templates.py
+python3 scripts/test_pptx_assets.py
 ```
 
-## Index (ordered)
-
-| # | File | Scenario | Outline skill |
-|---|------|----------|---------------|
-| 01 | [pptx/01-technical-review.pptx](pptx/01-technical-review.pptx) | Technical / design review | [01-technical-review.md](../01-technical-review.md) |
-| 02 | [pptx/02-results-demo.pptx](pptx/02-results-demo.pptx) | Results / demo / launch | [02-results-demo.md](../02-results-demo.md) |
-| 03 | [pptx/03-management-effectiveness.pptx](pptx/03-management-effectiveness.pptx) | Management / org health | [03-management-effectiveness.md](../03-management-effectiveness.md) |
-| 04 | [pptx/04-benefit-value.pptx](pptx/04-benefit-value.pptx) | Benefit / ROI / value | [04-benefit-value.md](../04-benefit-value.md) |
-| 05 | [pptx/05-procurement-proposal.pptx](pptx/05-procurement-proposal.pptx) | Procurement / vendor | [05-procurement-proposal.md](../05-procurement-proposal.md) |
-| 06 | [pptx/06-resource-request.pptx](pptx/06-resource-request.pptx) | Headcount / budget / air cover | [06-resource-request.md](../06-resource-request.md) |
-| 07 | [pptx/07-roadmap.pptx](pptx/07-roadmap.pptx) | Roadmap review | [07-roadmap.md](../07-roadmap.md) |
-| 08 | [pptx/08-period-start-planning.pptx](pptx/08-period-start-planning.pptx) | Period-start commit | [08-period-start-planning.md](../08-period-start-planning.md) |
-| 09 | [pptx/09-period-end-review.pptx](pptx/09-period-end-review.pptx) | Period-end / QBR | [09-period-end-review.md](../09-period-end-review.md) |
-
-## Slide spine (every deck)
-
-1. Cover (scenario + title)  
-2. BLUF / status + recommendation or result  
-3. Body (problem, metrics, capacity, risks…)  
-4. Options table (when a decision is required)  
-5. Decision & ask  
-
-Design: Midnight Executive navy (`1E2761`) + light content panels; Calibri; placeholders only.
+Content data: `scripts/pptx_deck_data.py` · Generator: `scripts/generate_report_pptx_templates.py`  
+Research norms: [../research-deck-norms.md](../research-deck-norms.md)

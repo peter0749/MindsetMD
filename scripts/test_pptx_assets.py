@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural tests for shipped report PPTX assets (real officecli entry points)."""
+"""Structural tests for shipped report PPTX templates + examples (real officecli path)."""
 from __future__ import annotations
 
 import subprocess
@@ -8,6 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "skills" / "presentations" / "assets" / "pptx"
+TPL = ASSETS / "templates"
+EX = ASSETS / "examples"
 OFFICECLI = Path.home() / ".local" / "bin" / "officecli"
 
 EXPECTED = [
@@ -24,40 +26,50 @@ EXPECTED = [
 
 
 def ocli(*args: str) -> str:
-    r = subprocess.run(
-        [str(OFFICECLI), *args],
-        capture_output=True,
-        text=True,
-    )
+    r = subprocess.run([str(OFFICECLI), *args], capture_output=True, text=True)
     if r.returncode != 0:
-        raise AssertionError(f"officecli {' '.join(args)} failed: {r.stderr or r.stdout}")
+        raise AssertionError(f"officecli failed: {args} :: {r.stderr or r.stdout}")
     return r.stdout
 
 
+def check_deck(path: Path, *, expect_example: bool) -> None:
+    out = ocli("validate", str(path))
+    assert "passed" in out.lower() or "no errors" in out.lower(), out
+    text = ocli("view", str(path), "text")
+    assert r"\n" not in text.replace("\n", ""), f"literal backslash-n in {path.name}"
+    # Real collision garble was a single line like "BOTTOM LINE UP FRONTF BLUF — …"
+    joined = " ".join(text.split())
+    up = joined.upper()
+    assert "FRONTF BLUF" not in up and "UP FRONTF" not in up, f"title collision garble in {path.name}: {joined[:120]}"
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    assert any("BOTTOM LINE UP FRONT" in ln.upper() for ln in lines), f"missing BLUF kicker line in {path.name}"
+    assert any("BLUF" in ln.upper() for ln in lines), f"missing BLUF title line in {path.name}"
+    low = text.lower()
+    assert "decision" in low or "ask" in low or "recommend" in low, f"missing decision language {path.name}"
+    if expect_example:
+        assert "aurora" in low or "atlas" in low or "novasemi" in low, f"example missing story world {path.name}"
+        # templates are full of [placeholders]; examples should be mostly filled
+        assert text.count("[") < 12, f"example still looks too placeholder-heavy {path.name}"
+    print("OK", path.relative_to(ASSETS))
+
+
 def main() -> int:
-    assert OFFICECLI.is_file(), f"officecli missing at {OFFICECLI}"
-    assert ASSETS.is_dir(), f"assets dir missing: {ASSETS}"
-    files = sorted(p.name for p in ASSETS.glob("*.pptx"))
-    assert files == EXPECTED, f"unexpected pptx set: {files}"
+    assert OFFICECLI.is_file(), f"missing officecli {OFFICECLI}"
+    assert TPL.is_dir() and EX.is_dir(), "templates/ and examples/ required"
+    tpl = sorted(p.name for p in TPL.glob("*.pptx"))
+    ex = sorted(p.name for p in EX.glob("*.pptx"))
+    assert tpl == EXPECTED, f"templates mismatch: {tpl}"
+    assert ex == EXPECTED, f"examples mismatch: {ex}"
+    assert len(tpl) + len(ex) >= 18
 
     for name in EXPECTED:
-        path = ASSETS / name
-        out = ocli("validate", str(path))
-        assert "passed" in out.lower() or "no errors" in out.lower(), out
-        text = ocli("view", str(path), "text")
-        assert r"\n" not in text.replace("\n", ""), "literal backslash-n should not appear"
-        # BLUF title collision regression: default title + kicker used to merge into FRONTF/FRONTBLUF
-        compact = "".join(text.split()).upper()
-        assert "FRONTF" not in compact and "FRONTBLUF" not in compact, (
-            f"{name}: BLUF title collision (garbled BOTTOM LINE + BLUF title)"
-        )
-        assert "BOTTOMLINEUPFRONT" in compact or "BLUF" in compact, f"{name} missing BLUF band"
-        # content guidance
-        low = text.lower()
-        assert "bluf" in low or "bottom line" in low or "status" in low, f"{name} missing BLUF/status"
-        assert "decision" in low or "ask" in low or "recommend" in low, f"{name} missing decision language"
-        print("OK", name)
-    print("PASS", len(EXPECTED), "decks")
+        check_deck(TPL / name, expect_example=False)
+        check_deck(EX / name, expect_example=True)
+
+    # Index must map both
+    idx = (ASSETS.parent / "README.md").read_text()
+    assert "templates/" in idx and "examples/" in idx
+    print("PASS", len(EXPECTED), "templates +", len(EXPECTED), "examples")
     return 0
 
 

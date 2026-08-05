@@ -23,7 +23,9 @@
 
 風格與投影片紀律： [00-style-mnc-and-hsinchu.md](00-style-mnc-and-hsinchu.md)
 
-**可編輯 PPTX 標準模板（officecli 產出）：** [assets/README.md](assets/README.md) → `assets/pptx/01`–`09`  
+**可編輯 PPTX（officecli）：** [assets/README.md](assets/README.md)  
+- 模板：`assets/pptx/templates/01`–`09`  
+- 情境範例（Aurora/NovaSemi 連貫故事）：`assets/pptx/examples/01`–`09`  
 **產業簡報結構研究筆記：** [research-deck-norms.md](research-deck-norms.md)
 
 ---
