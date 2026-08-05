@@ -85,6 +85,73 @@ def E(kicker, title, subtitle, bluf_title, bluf_status, bluf_body, body_slides, 
     }
 
 
+
+# Public pattern provenance per scenario (structure only — not confidential decks)
+SCENARIO_PATTERNS: dict[str, dict] = {
+    "01-technical-review": {
+        "label": "Design-doc / RFC options table + residual risk",
+        "sources": [
+            ("StaffEng — Writing engineering strategy", "https://staffeng.com/guides/engineering-strategy/"),
+            ("Utterskills — options instead of single conclusion", "https://utterskills.com/blog/communication-skills-for-software-engineers"),
+        ],
+    },
+    "02-results-demo": {
+        "label": "Launch / silicon bring-up readout (impact first)",
+        "sources": [
+            ("MediaTek public 2nm tape-out milestone language", "https://www.mediatek.com/press-room/mediatek-develops-chip-utilizing-tsmcs-2nm-process-achieving-milestones-in-performance-andpower-efficiency"),
+            ("SRE Book — example postmortem impact summary shape", "https://sre.google/sre-book/example-postmortem/"),
+        ],
+    },
+    "03-management-effectiveness": {
+        "label": "Team health + capacity scorecard (managing up)",
+        "sources": [
+            ("The Engineering Manager — Managing upwards", "https://www.theengineeringmanager.com/management-101/managing-upwards/"),
+            ("Netflix culture (public) — talent density language only", "https://jobs.netflix.com/culture"),
+        ],
+    },
+    "04-benefit-value": {
+        "label": "Platform / shared infra investment impact chain",
+        "sources": [
+            ("EM Tools — executive communication / impact framing", "https://www.em-tools.io/engineering-manager-responsibilities/executive-communication"),
+            ("StaffEng — strategy as leverage (not ticket dumps)", "https://staffeng.com/guides/engineering-strategy/"),
+        ],
+    },
+    "05-procurement-proposal": {
+        "label": "Vendor TCO options + procurement lead time",
+        "sources": [
+            ("Industry EDA/tool buy case shape (must/should + lead time)", "https://www.em-tools.io/engineering-manager-responsibilities/headcount-planning"),
+        ],
+    },
+    "06-resource-request": {
+        "label": "Roadmap-backed headcount / resource business case",
+        "sources": [
+            ("EM Tools — Headcount planning", "https://www.em-tools.io/engineering-manager-responsibilities/headcount-planning"),
+            ("TPM influence without authority (when no budget ownership)", "https://www.mariogerard.com/how-to-influence-without-authority-as-a-tpm/"),
+        ],
+    },
+    "07-roadmap": {
+        "label": "Outcome themes + not-doing + capacity-honest plan",
+        "sources": [
+            ("EM Tools — Roadmap planning", "https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning"),
+            ("StaffEng — engineering strategy", "https://staffeng.com/guides/engineering-strategy/"),
+        ],
+    },
+    "08-period-start-planning": {
+        "label": "Commit / stretch / out period kickoff",
+        "sources": [
+            ("EM Tools — Roadmap / planning kickoff norms", "https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning"),
+            ("BLUF executive framing", "https://www.getorvo.com/learn/executive-communication-strategy"),
+        ],
+    },
+    "09-period-end-review": {
+        "label": "Leadership QBR scorecard → risks → asks",
+        "sources": [
+            ("SRE Book — example postmortem (impact honesty)", "https://sre.google/sre-book/example-postmortem/"),
+            ("EM Tools — executive communication updates", "https://www.em-tools.io/engineering-manager-responsibilities/executive-communication"),
+        ],
+    },
+}
+
 # ============================================================================
 # Scenario packs: each key has template + example
 # ============================================================================

@@ -61,6 +61,16 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Vendor TCO options + procurement lead time
+
+| Source | URL |
+|--------|-----|
+| Industry EDA/tool buy case shape (must/should + lead time) | https://www.em-tools.io/engineering-manager-responsibilities/headcount-planning |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(b)](../resource-advocacy/securing-resources-upward.md) · [(a)](../executive-communication/decision-ready-updates.md) · [04 效益](04-benefit-value.md)

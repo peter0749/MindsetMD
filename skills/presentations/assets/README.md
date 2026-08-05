@@ -4,10 +4,12 @@ Two packs per scenario (01–09):
 
 | Pack | Path | Purpose |
 |------|------|---------|
-| **Template** | [`templates/`](templates/) | Placeholder structure — copy and fill |
-| **Example** | [`examples/`](examples/) | Filled **Aurora / NovaSemi / Atlas** storyline simulation |
+| **Template** | [`pptx/templates/`](pptx/templates/) | Placeholder structure — copy and fill |
+| **Example** | [`pptx/examples/`](pptx/examples/) | Filled **Aurora / NovaSemi / Atlas** storyline simulation |
 
 **Out of scope:** personal performance / annual self-review.
+
+**Pattern provenance:** each deck’s cover + “Pattern provenance” slide name the public tech/IC pattern; full table in [../classic-public-cases.md](../classic-public-cases.md).
 
 ## Shared example universe
 
@@ -37,24 +39,40 @@ Two packs per scenario (01–09):
 
 Stories cross-link; **lagging KPIs always pre-date the deck’s ask deadline**.
 
+### Scenario → public pattern (explicit)
+
+| # | Scenario | Pattern (public) | Key sources |
+|---|----------|------------------|-------------|
+| 01 | Technical review | Design-doc / RFC options + residual risk | [StaffEng strategy](https://staffeng.com/guides/engineering-strategy/) · [Utterskills options framing](https://utterskills.com/blog/communication-skills-for-software-engineers) |
+| 02 | Results / demo | Launch / bring-up readout (impact first) | Public silicon/GA style + [MediaTek 2nm TO press](https://www.mediatek.com/press-room/mediatek-develops-chip-utilizing-tsmcs-2nm-process-achieving-milestones-in-performance-andpower-efficiency) for IC milestone language |
+| 03 | Management effectiveness | Team health + capacity scorecard | [Managing upwards](https://www.theengineeringmanager.com/management-101/managing-upwards/) · [Netflix culture (public)](https://jobs.netflix.com/culture) (talent-density language only) |
+| 04 | Benefit / ROI | Platform investment impact chain | Eng platform/CI farm ROI narrative pattern |
+| 05 | Procurement | TCO options + lead time | Industry EDA/tool buy case shape |
+| 06 | Resource / HC | Roadmap-backed headcount case | [EM Tools headcount](https://www.em-tools.io/engineering-manager-responsibilities/headcount-planning) |
+| 07 | Roadmap | Themes + not-doing + intake | [EM Tools roadmap](https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning) · StaffEng |
+| 08 | Period start | Commit / stretch / out | Planning kickoff norm |
+| 09 | Period end / QBR | Scorecard Hit/Partial/Miss → asks | Leadership QBR pattern; [SRE postmortem structure](https://sre.google/sre-book/example-postmortem/) for impact honesty |
+
+Full case list: [../classic-public-cases.md](../classic-public-cases.md) · norms: [../research-deck-norms.md](../research-deck-norms.md).
+
 ## Index
 
 | # | Scenario | Template | Example |
 |---|----------|----------|---------|
-| 01 | Technical review | [templates/01-technical-review.pptx](templates/01-technical-review.pptx) | [examples/01-technical-review.pptx](examples/01-technical-review.pptx) |
-| 02 | Results / demo | [templates/02-results-demo.pptx](templates/02-results-demo.pptx) | [examples/02-results-demo.pptx](examples/02-results-demo.pptx) |
-| 03 | Management effectiveness | [templates/03-management-effectiveness.pptx](templates/03-management-effectiveness.pptx) | [examples/03-management-effectiveness.pptx](examples/03-management-effectiveness.pptx) |
-| 04 | Benefit / ROI | [templates/04-benefit-value.pptx](templates/04-benefit-value.pptx) | [examples/04-benefit-value.pptx](examples/04-benefit-value.pptx) |
-| 05 | Procurement | [templates/05-procurement-proposal.pptx](templates/05-procurement-proposal.pptx) | [examples/05-procurement-proposal.pptx](examples/05-procurement-proposal.pptx) |
-| 06 | Resource / HC | [templates/06-resource-request.pptx](templates/06-resource-request.pptx) | [examples/06-resource-request.pptx](examples/06-resource-request.pptx) |
-| 07 | Roadmap | [templates/07-roadmap.pptx](templates/07-roadmap.pptx) | [examples/07-roadmap.pptx](examples/07-roadmap.pptx) |
-| 08 | Period start | [templates/08-period-start-planning.pptx](templates/08-period-start-planning.pptx) | [examples/08-period-start-planning.pptx](examples/08-period-start-planning.pptx) |
-| 09 | Period end / QBR | [templates/09-period-end-review.pptx](templates/09-period-end-review.pptx) | [examples/09-period-end-review.pptx](examples/09-period-end-review.pptx) |
+| 01 | Technical review | [pptx/templates/01-technical-review.pptx](pptx/templates/01-technical-review.pptx) | [pptx/examples/01-technical-review.pptx](pptx/examples/01-technical-review.pptx) |
+| 02 | Results / demo | [pptx/templates/02-results-demo.pptx](pptx/templates/02-results-demo.pptx) | [pptx/examples/02-results-demo.pptx](pptx/examples/02-results-demo.pptx) |
+| 03 | Management effectiveness | [pptx/templates/03-management-effectiveness.pptx](pptx/templates/03-management-effectiveness.pptx) | [pptx/examples/03-management-effectiveness.pptx](pptx/examples/03-management-effectiveness.pptx) |
+| 04 | Benefit / ROI | [pptx/templates/04-benefit-value.pptx](pptx/templates/04-benefit-value.pptx) | [pptx/examples/04-benefit-value.pptx](pptx/examples/04-benefit-value.pptx) |
+| 05 | Procurement | [pptx/templates/05-procurement-proposal.pptx](pptx/templates/05-procurement-proposal.pptx) | [pptx/examples/05-procurement-proposal.pptx](pptx/examples/05-procurement-proposal.pptx) |
+| 06 | Resource / HC | [pptx/templates/06-resource-request.pptx](pptx/templates/06-resource-request.pptx) | [pptx/examples/06-resource-request.pptx](pptx/examples/06-resource-request.pptx) |
+| 07 | Roadmap | [pptx/templates/07-roadmap.pptx](pptx/templates/07-roadmap.pptx) | [pptx/examples/07-roadmap.pptx](pptx/examples/07-roadmap.pptx) |
+| 08 | Period start | [pptx/templates/08-period-start-planning.pptx](pptx/templates/08-period-start-planning.pptx) | [pptx/examples/08-period-start-planning.pptx](pptx/examples/08-period-start-planning.pptx) |
+| 09 | Period end / QBR | [pptx/templates/09-period-end-review.pptx](pptx/templates/09-period-end-review.pptx) | [pptx/examples/09-period-end-review.pptx](pptx/examples/09-period-end-review.pptx) |
 
 ## Layout rules (optimized)
 
 - No default title placeholder on content/BLUF slides (prevents kicker collision).
-- Title band → status bar (BLUF) → card body → footer meta.
+- Cover → **Pattern provenance** → BLUF → body → options → ask.
 - Margins ≥ 1.4cm; navy status bar; options tables with navy header.
 - Real newlines only (never literal `\n` in text).
 
@@ -63,7 +81,7 @@ Stories cross-link; **lagging KPIs always pre-date the deck’s ask deadline**.
 ```bash
 python3 scripts/generate_report_pptx_templates.py
 python3 scripts/test_pptx_assets.py
+python3 scripts/check_markdown_links.py
 ```
 
-Content data: `scripts/pptx_deck_data.py` · Generator: `scripts/generate_report_pptx_templates.py`  
-Research norms: [../research-deck-norms.md](../research-deck-norms.md)
+Content data: `scripts/pptx_deck_data.py` · Generator: `scripts/generate_report_pptx_templates.py`

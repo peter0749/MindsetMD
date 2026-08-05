@@ -55,6 +55,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Platform / shared infra investment impact chain
+
+| Source | URL |
+|--------|-----|
+| EM Tools — executive communication / impact framing | https://www.em-tools.io/engineering-manager-responsibilities/executive-communication |
+| StaffEng — strategy as leverage (not ticket dumps) | https://staffeng.com/guides/engineering-strategy/ |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(e)](../department-value/presenting-department-value.md) · [(a)](../executive-communication/decision-ready-updates.md) · 採購 [05](05-procurement-proposal.md) · 資源 [06](06-resource-request.md)

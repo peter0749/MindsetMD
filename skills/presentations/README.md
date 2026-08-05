@@ -26,7 +26,8 @@
 **可編輯 PPTX（officecli）：** [assets/README.md](assets/README.md)  
 - 模板：`assets/pptx/templates/01`–`09`  
 - 情境範例（Aurora/NovaSemi 連貫故事）：`assets/pptx/examples/01`–`09`  
-**產業簡報結構研究筆記：** [research-deck-norms.md](research-deck-norms.md)
+**產業簡報結構研究筆記：** [research-deck-norms.md](research-deck-norms.md)  
+**經典公開案例對照（軟體/IC）：** [classic-public-cases.md](classic-public-cases.md)
 
 ---
 

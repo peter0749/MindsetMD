@@ -61,6 +61,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Outcome themes + not-doing + capacity-honest plan
+
+| Source | URL |
+|--------|-----|
+| EM Tools — Roadmap planning | https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning |
+| StaffEng — engineering strategy | https://staffeng.com/guides/engineering-strategy/ |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(d)](../roadmap-planning/planning-sense-proactive-framing.md) · [capacity](../shared/capacity-model.md) · [08 期初](08-period-start-planning.md) · [09 期末](09-period-end-review.md)

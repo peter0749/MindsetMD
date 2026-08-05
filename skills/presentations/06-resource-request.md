@@ -62,6 +62,17 @@ Air cover：
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Roadmap-backed headcount / resource business case
+
+| Source | URL |
+|--------|-----|
+| EM Tools — Headcount planning | https://www.em-tools.io/engineering-manager-responsibilities/headcount-planning |
+| TPM influence without authority (when no budget ownership) | https://www.mariogerard.com/how-to-influence-without-authority-as-a-tpm/ |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - 完整 case：[(b)](../resource-advocacy/securing-resources-upward.md)  

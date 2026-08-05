@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pptx_deck_data import SCENARIOS  # noqa: E402
+from pptx_deck_data import SCENARIOS, SCENARIO_PATTERNS  # noqa: E402
 OUT_ROOT = ROOT / "skills" / "presentations" / "assets" / "pptx"
 OFFICECLI = Path.home() / ".local" / "bin" / "officecli"
 
@@ -162,46 +162,73 @@ def build_deck(path: Path, pack: dict) -> None:
     cmds: list[dict] = []
     kind = pack.get("kind", "template")
     badge = "EXAMPLE" if kind == "example" else "TEMPLATE"
+    pattern = pack.get("pattern") or {}
+    plabel = pattern.get("label") or "See classic-public-cases.md"
+    psources = pattern.get("sources") or []
+    pattern_body = f"Public pattern (structure only — not a confidential company deck):\n\n{plabel}\n\n"
+    for title, url in psources:
+        pattern_body += f"• {title}\n  {url}\n"
+    pattern_body += (
+        "\nHow to use: copy section order and decision verbs; replace with your metrics.\n"
+        "In-repo: skills/presentations/classic-public-cases.md"
+    )
+    pattern_notes = plabel + "\n" + "\n".join(f"{t}: {u}" for t, u in psources)
 
-    # --- 1 Cover ---
-    cmds.append(add_slide(pack["title"], NAVY))
+    s = 0
+
+    def next_slide(name: str, bg: str = LIGHT) -> int:
+        nonlocal s
+        s += 1
+        cmds.append(add_slide(name, bg))
+        return s
+
+    # --- Cover ---
+    i = next_slide(pack["title"], NAVY)
     cmds += [
-        shape(1, pack["kicker"], MARGIN, "2.8cm", CONTENT_W, "0.9cm", size=14, color="CADCFC", bold=True),
-        shape(1, pack["title"], MARGIN, "4.0cm", CONTENT_W, "2.6cm", size=34, color=WHITE, bold=True),
-        shape(1, pack["subtitle"], MARGIN, "7.0cm", CONTENT_W, "2.0cm", size=17, color="CADCFC"),
-        shape(1, f"{badge}  ·  {pack['meta']}", MARGIN, "16.6cm", CONTENT_W, "1.1cm", size=12, color="A0AEC0"),
-        notes(1, f"Cover ({kind}). {pack.get('story', pack['title'])}"),
+        shape(i, pack["kicker"], MARGIN, "2.6cm", CONTENT_W, "0.85cm", size=14, color="CADCFC", bold=True),
+        shape(i, pack["title"], MARGIN, "3.7cm", CONTENT_W, "2.5cm", size=32, color=WHITE, bold=True),
+        shape(i, pack["subtitle"], MARGIN, "6.5cm", CONTENT_W, "1.8cm", size=16, color="CADCFC"),
+        shape(i, f"Pattern: {plabel}", MARGIN, "9.0cm", CONTENT_W, "1.6cm", size=14, color="A0C4E8"),
+        shape(i, f"{badge}  ·  {pack['meta']}", MARGIN, "16.6cm", CONTENT_W, "1.1cm", size=12, color="A0AEC0"),
+        notes(i, f"Cover ({kind}). {pack.get('story', pack['title'])}\n\n{pattern_notes}"),
     ]
 
-    # --- 2 BLUF (no default title PH) ---
-    cmds.append(add_slide(pack["bluf_title"], LIGHT))
-    cmds += title_block(2, pack["bluf_title"], "BOTTOM LINE UP FRONT")
+    # --- Pattern provenance ---
+    i = next_slide("Pattern provenance", LIGHT)
+    cmds += title_block(i, "Pattern provenance", "WHERE THIS DECK SHAPE COMES FROM")
     cmds += [
-        shape(2, pack["bluf_status"], MARGIN, "3.5cm", CONTENT_W, "1.75cm", size=14, color=WHITE, bold=True, fill=NAVY),
-        shape(2, pack["bluf_body"], MARGIN, "5.5cm", CONTENT_W, "11.7cm", size=16, color=TEXT, fill=CARD),
-        footer(2, pack["meta"]),
-        notes(2, pack.get("ask_notes", "Lead with BLUF.")),
+        shape(i, pattern_body, MARGIN, "3.5cm", CONTENT_W, "13.5cm", size=15, color=TEXT, fill=CARD),
+        footer(i, pack["meta"]),
+        notes(i, pattern_notes),
+    ]
+
+    # --- BLUF ---
+    i = next_slide(pack["bluf_title"], LIGHT)
+    cmds += title_block(i, pack["bluf_title"], "BOTTOM LINE UP FRONT")
+    cmds += [
+        shape(i, pack["bluf_status"], MARGIN, "3.5cm", CONTENT_W, "1.75cm", size=14, color=WHITE, bold=True, fill=NAVY),
+        shape(i, pack["bluf_body"], MARGIN, "5.5cm", CONTENT_W, "11.7cm", size=16, color=TEXT, fill=CARD),
+        footer(i, pack["meta"]),
+        notes(i, pack.get("ask_notes", "Lead with BLUF.")),
     ]
 
     # --- Body ---
-    s = 3
     for bt, body, ntxt in pack["body_slides"]:
-        cmds.append(add_slide(bt, LIGHT))
-        cmds += title_block(s, bt)
+        i = next_slide(bt, LIGHT)
+        cmds += title_block(i, bt)
         cmds += [
-            shape(s, body, MARGIN, "3.5cm", CONTENT_W, "13.5cm", size=16, color=TEXT, fill=CARD),
-            footer(s, pack["meta"]),
-            notes(s, ntxt),
+            shape(i, body, MARGIN, "3.5cm", CONTENT_W, "13.5cm", size=16, color=TEXT, fill=CARD),
+            footer(i, pack["meta"]),
+            notes(i, ntxt),
         ]
-        s += 1
 
     # --- Options ---
     if pack.get("options_table"):
-        cmds.append(add_slide("Options & recommendation", LIGHT))
-        cmds += title_block(s, "Options & recommendation")
+        i = next_slide("Options & recommendation", LIGHT)
+        cmds += title_block(i, "Options & recommendation")
         cmds += [
             shape(
-                s,
+                i,
                 "Compare paths; recommendation is marked REC. Decision owner picks by the date on the Ask slide.",
                 MARGIN,
                 "3.4cm",
@@ -211,17 +238,16 @@ def build_deck(path: Path, pack: dict) -> None:
                 color=MUTED,
             ),
         ]
-        cmds += table_cmds(s, pack["options_table"], y="4.7cm", h="11.5cm")
-        cmds += [footer(s, pack["meta"]), notes(s, "Walk trade-offs; land recommendation.")]
-        s += 1
+        cmds += table_cmds(i, pack["options_table"], y="4.7cm", h="11.5cm")
+        cmds += [footer(i, pack["meta"]), notes(i, "Walk trade-offs; land recommendation.")]
 
     # --- Ask ---
-    cmds.append(add_slide("Decision & ask", LIGHT))
-    cmds += title_block(s, "Decision & ask", "WHAT WE NEED FROM THIS ROOM")
+    i = next_slide("Decision & ask", LIGHT)
+    cmds += title_block(i, "Decision & ask", "WHAT WE NEED FROM THIS ROOM")
     cmds += [
-        shape(s, pack["ask_lines"], MARGIN, "3.5cm", CONTENT_W, "13.5cm", size=17, color=TEXT, fill=CARD),
-        footer(s, pack["meta"]),
-        notes(s, pack.get("ask_notes", "Close with owner + date.")),
+        shape(i, pack["ask_lines"], MARGIN, "3.5cm", CONTENT_W, "13.5cm", size=17, color=TEXT, fill=CARD),
+        footer(i, pack["meta"]),
+        notes(i, pack.get("ask_notes", "Close with owner + date.")),
     ]
 
     batch(path, cmds)
@@ -256,15 +282,16 @@ def main() -> int:
 
     for key in keys:
         packs = SCENARIOS[key]
+        pattern = SCENARIO_PATTERNS.get(key) or packs.get("pattern") or {}
         if args.kind in ("template", "both"):
             path = tpl_dir / f"{key}.pptx"
             print("template", path.name)
-            build_deck(path, packs["template"])
+            build_deck(path, {**packs["template"], "pattern": pattern})
             run(["validate", str(path)])
         if args.kind in ("example", "both"):
             path = ex_dir / f"{key}.pptx"
             print("example ", path.name)
-            build_deck(path, packs["example"])
+            build_deck(path, {**packs["example"], "pattern": pattern})
             run(["validate", str(path)])
 
     print("Done →", tpl_dir, "and", ex_dir)

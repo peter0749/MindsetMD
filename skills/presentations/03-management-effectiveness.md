@@ -63,6 +63,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Team health + capacity scorecard (managing up)
+
+| Source | URL |
+|--------|-----|
+| The Engineering Manager — Managing upwards | https://www.theengineeringmanager.com/management-101/managing-upwards/ |
+| Netflix culture (public) — talent density language only | https://jobs.netflix.com/culture |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(e)](../department-value/presenting-department-value.md) · [(b)](../resource-advocacy/securing-resources-upward.md) · [09 期末](09-period-end-review.md)

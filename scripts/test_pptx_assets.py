@@ -47,8 +47,12 @@ def check_deck(path: Path, *, expect_example: bool) -> None:
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     assert any("BOTTOM LINE UP FRONT" in ln.upper() for ln in lines), path.name
     assert any("BLUF" in ln.upper() for ln in lines), path.name
+    assert any("PATTERN PROVENANCE" in ln.upper() or ln.upper().startswith("PATTERN:") for ln in lines), (
+        f"missing pattern provenance in {path.name}"
+    )
     low = text.lower()
     assert "decision" in low or "ask" in low or "recommend" in low, path.name
+    assert "http://" in text or "https://" in text, f"pattern sources URLs missing in {path.name}"
     if expect_example:
         assert "aurora" in low or "atlas" in low or "novasemi" in low, path.name
         assert text.count("[") < 12, path.name

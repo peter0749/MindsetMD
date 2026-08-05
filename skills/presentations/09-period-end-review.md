@@ -76,6 +76,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Leadership QBR scorecard → risks → asks
+
+| Source | URL |
+|--------|-----|
+| SRE Book — example postmortem (impact honesty) | https://sre.google/sre-book/example-postmortem/ |
+| EM Tools — executive communication updates | https://www.em-tools.io/engineering-manager-responsibilities/executive-communication |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(e)](../department-value/presenting-department-value.md) · [(a)](../executive-communication/decision-ready-updates.md) · [02 成果](02-results-demo.md) · [08 期初](08-period-start-planning.md) · [00-style](00-style-mnc-and-hsinchu.md)

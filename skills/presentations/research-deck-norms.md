@@ -100,5 +100,8 @@ Tape-out is treated as a **gated decision** (checks, reviews, sign-off), not a c
 - QBR structure: status–risks–decisions–priorities; exec summary + scorecard (industry QBR guides, e.g. Slideworks / Deckary-style leadership QBR patterns).  
 - Roadmap: decision-first executive view with themes and trade-offs.  
 - IC: tape-out / design-review milestone sequences (public semiconductor process explainers; design-flow milestone lists).  
+- **Named classic cases (software + IC):** see [classic-public-cases.md](classic-public-cases.md) — Google SRE postmortem example, GitLab DB outage, Netflix culture deck patterns, MediaTek/TSMC public tape-out milestones, StaffEng strategy writing.
 
 In-repo outline sources: `skills/presentations/01`–`09` markdown + `00-style-mnc-and-hsinchu.md`.
+
+**Policy:** Prefer these public patterns over pure fiction when shaping options tables, QBR scorecards, and silicon gates; keep fictional company names/metrics in shipped example PPTX for legal/coherent multi-deck storytelling.

@@ -62,6 +62,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Launch / silicon bring-up readout (impact first)
+
+| Source | URL |
+|--------|-----|
+| MediaTek public 2nm tape-out milestone language | https://www.mediatek.com/press-room/mediatek-develops-chip-utilizing-tsmcs-2nm-process-achieving-milestones-in-performance-andpower-efficiency |
+| SRE Book — example postmortem impact summary shape | https://sre.google/sre-book/example-postmortem/ |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [00-style](00-style-mnc-and-hsinchu.md) · [(e)](../department-value/presenting-department-value.md) · [(a)](../executive-communication/decision-ready-updates.md) · 期末版 [09](09-period-end-review.md)

@@ -63,6 +63,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Commit / stretch / out period kickoff
+
+| Source | URL |
+|--------|-----|
+| EM Tools — Roadmap / planning kickoff norms | https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning |
+| BLUF executive framing | https://www.getorvo.com/learn/executive-communication-strategy |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [(d)](../roadmap-planning/planning-sense-proactive-framing.md) · [07 roadmap](07-roadmap.md) · [06 resources](06-resource-request.md) · [(c) 會後 actions](../meetings/in-meeting-and-follow-through.md)

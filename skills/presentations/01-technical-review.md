@@ -77,6 +77,17 @@
 
 ---
 
+## Pattern provenance (public)
+
+**Pattern:** Design-doc / RFC options table + residual risk
+
+| Source | URL |
+|--------|-----|
+| StaffEng — Writing engineering strategy | https://staffeng.com/guides/engineering-strategy/ |
+| Utterskills — options instead of single conclusion | https://utterskills.com/blog/communication-skills-for-software-engineers |
+
+Synthetic example deck uses NovaSemi/Aurora story; structure follows the sources above. Full map: [classic-public-cases.md](classic-public-cases.md).
+
 ## See also
 
 - [00-style](00-style-mnc-and-hsinchu.md) · [(a)](../executive-communication/decision-ready-updates.md) · [(d)](../roadmap-planning/planning-sense-proactive-framing.md) · [(f)](../cross-team/conflict-and-coordination.md)
