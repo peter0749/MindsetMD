@@ -14,7 +14,7 @@ TPL = ASSETS / "templates"
 EX = ASSETS / "examples"
 OFFICECLI = Path.home() / ".local" / "bin" / "officecli"
 sys.path.insert(0, str(ROOT / "scripts"))
-from pptx_deck_data import AURORA_TIMELINE, SCENARIOS  # noqa: E402
+from pptx_deck_data import AURORA_TIMELINE, EXAMPLE_SITUATIONS, SCENARIOS  # noqa: E402
 
 EXPECTED = [
     "01-technical-review.pptx",
@@ -56,6 +56,19 @@ def check_deck(path: Path, *, expect_example: bool) -> None:
     if expect_example:
         assert "aurora" in low or "atlas" in low or "novasemi" in low, path.name
         assert text.count("[") < 12, path.name
+        # Situation card markers — cold reader / agent
+        for marker in (
+            "Presenter:",
+            "Decision-maker:",
+            "What just happened",
+            "Decision needed:",
+            "Recommendation:",
+            "Decide by:",
+            "If YES:",
+            "If NO",
+        ):
+            assert marker in text or marker.lower() in low, f"{path.name} missing situation marker {marker!r}"
+        assert "Situation & decision card" in text or "SITUATION" in text.upper(), path.name
     print("OK", path.relative_to(ASSETS))
 
 
@@ -144,6 +157,32 @@ def check_aurora_timeline_data() -> None:
     print("OK aurora timeline data checks")
 
 
+def check_example_situations_complete() -> None:
+    """Every example has a full situation card in data + regenerated deck."""
+    assert set(EXAMPLE_SITUATIONS) == {
+        k for k in SCENARIOS if k.startswith("0")
+    } or set(EXAMPLE_SITUATIONS) == set(SCENARIOS.keys())
+    required = {
+        "presenter",
+        "decision_maker",
+        "what_happened",
+        "stakes",
+        "decision",
+        "recommend",
+        "if_yes",
+        "if_no_or_delay",
+        "decide_by",
+        "prior_arc",
+        "next_arc",
+    }
+    for key, sit in EXAMPLE_SITUATIONS.items():
+        missing = required - set(sit)
+        assert not missing, f"{key} situation missing {missing}"
+        assert sit["decide_by"].strip(), key
+        assert sit["recommend"].strip(), key
+    print("OK EXAMPLE_SITUATIONS complete for", len(EXAMPLE_SITUATIONS), "scenarios")
+
+
 def check_generated_example_04_text() -> None:
     """Drive real officecli extract: 04 must not claim post-ask freeze as lagging."""
     path = EX / "04-benefit-value.pptx"
@@ -166,6 +205,7 @@ def main() -> int:
     assert ex == EXPECTED, f"examples mismatch: {ex}"
 
     check_aurora_timeline_data()
+    check_example_situations_complete()
 
     for name in EXPECTED:
         check_deck(TPL / name, expect_example=False)
@@ -175,7 +215,12 @@ def main() -> int:
 
     idx = (ASSETS.parent / "README.md").read_text()
     assert "templates/" in idx and "examples/" in idx
-    print("PASS", len(EXPECTED), "templates +", len(EXPECTED), "examples + timeline")
+    guide = ASSETS.parent / "storyline-guide.md"
+    assert guide.is_file(), "storyline-guide.md required"
+    g = guide.read_text()
+    for i in range(1, 10):
+        assert f"**0{i}**" in g or f"| **0{i}**" in g or f"0{i}" in g, f"guide missing scenario 0{i}"
+    print("PASS", len(EXPECTED), "templates +", len(EXPECTED), "examples + timeline + situations")
     return 0
 
 

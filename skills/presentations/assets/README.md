@@ -11,6 +11,8 @@ Two packs per scenario (01–09):
 
 **Pattern provenance:** each deck’s cover + “Pattern provenance” slide name the public tech/IC pattern; full table in [../classic-public-cases.md](../classic-public-cases.md).
 
+**Storyline (examples):** [storyline-guide.md](storyline-guide.md) — multi-deck plot + per-scenario “what to decide.” Each example PPTX also has a **Situation & decision card** slide (presenter, decision-maker, stakes, yes/no).
+
 ## Shared example universe
 
 | Field | Value |

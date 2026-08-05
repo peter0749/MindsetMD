@@ -16,7 +16,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pptx_deck_data import SCENARIOS, SCENARIO_PATTERNS  # noqa: E402
+from pptx_deck_data import (  # noqa: E402
+    EXAMPLE_SITUATIONS,
+    SCENARIOS,
+    SCENARIO_PATTERNS,
+)
 OUT_ROOT = ROOT / "skills" / "presentations" / "assets" / "pptx"
 OFFICECLI = Path.home() / ".local" / "bin" / "officecli"
 
@@ -202,6 +206,35 @@ def build_deck(path: Path, pack: dict) -> None:
         notes(i, pattern_notes),
     ]
 
+    # --- Situation card (examples only) — cold reader / agent parse ---
+    sit = pack.get("situation") or {}
+    if kind == "example" and sit:
+        sit_body = (
+            f"Presenter: {sit.get('presenter', '—')}\n"
+            f"Decision-maker: {sit.get('decision_maker', '—')}\n"
+            f"Audience: {sit.get('audience', '—')}\n\n"
+            f"What just happened / context:\n{sit.get('what_happened', '—')}\n\n"
+            f"Stakes if we get this wrong:\n{sit.get('stakes', '—')}\n\n"
+            f"Decision needed:\n{sit.get('decision', '—')}\n\n"
+            f"Recommendation: {sit.get('recommend', '—')}\n"
+            f"If YES: {sit.get('if_yes', '—')}\n"
+            f"If NO / delay: {sit.get('if_no_or_delay', '—')}\n\n"
+            f"Decide by: {sit.get('decide_by', '—')}\n"
+            f"Arc prior: {sit.get('prior_arc', '—')}\n"
+            f"Arc next: {sit.get('next_arc', '—')}"
+        )
+        i = next_slide("Situation & decision card", LIGHT)
+        cmds += title_block(i, "Situation & decision card", "READ THIS BEFORE THE DETAILS")
+        cmds += [
+            shape(i, sit_body, MARGIN, "3.4cm", CONTENT_W, "13.8cm", size=13, color=TEXT, fill=CARD),
+            footer(i, pack["meta"]),
+            notes(
+                i,
+                "Agent/human: answer who/stakes/decision from this slide alone. "
+                f"Recommend={sit.get('recommend', '')} by {sit.get('decide_by', '')}.",
+            ),
+        ]
+
     # --- BLUF ---
     i = next_slide(pack["bluf_title"], LIGHT)
     cmds += title_block(i, pack["bluf_title"], "BOTTOM LINE UP FRONT")
@@ -291,7 +324,8 @@ def main() -> int:
         if args.kind in ("example", "both"):
             path = ex_dir / f"{key}.pptx"
             print("example ", path.name)
-            build_deck(path, {**packs["example"], "pattern": pattern})
+            sit = EXAMPLE_SITUATIONS.get(key) or {}
+            build_deck(path, {**packs["example"], "pattern": pattern, "situation": sit})
             run(["validate", str(path)])
 
     print("Done →", tpl_dir, "and", ex_dir)
