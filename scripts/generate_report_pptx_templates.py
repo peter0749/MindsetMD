@@ -50,9 +50,10 @@ def batch(path: Path, commands: list[dict]) -> None:
         raise RuntimeError(f"batch failed for {path.name}")
 
 
-def add_slide(title: str, bg: str = LIGHT) -> dict:
+def add_slide(title: str, bg: str = LIGHT, *, with_title: bool = True) -> dict:
+    """Add a slide. with_title=False avoids the default title placeholder (use for custom layout)."""
     # Dark covers: avoid default black title placeholder (low contrast).
-    if bg.upper().lstrip("#") == NAVY:
+    if bg.upper().lstrip("#") == NAVY or not with_title:
         return {
             "command": "add",
             "path": "/",
@@ -207,10 +208,11 @@ def build_generic(
         notes(1, f"Cover for {title}. State purpose in 10 seconds."),
     ]
 
-    # Slide 2 BLUF
-    cmds.append(add_slide(bluf_title, LIGHT))
+    # Slide 2 BLUF — no default title placeholder (it collided with kicker at y≈1.5cm)
+    cmds.append(add_slide(bluf_title, LIGHT, with_title=False))
     cmds += [
-        shape(2, "BOTTOM LINE UP FRONT", "1.5cm", "1.5cm", "14cm", "0.9cm", size=14, color=ACCENT, bold=True),
+        shape(2, bluf_title, "1.5cm", "1.2cm", "30.5cm", "2.0cm", size=32, color=TEXT, bold=True),
+        shape(2, "BOTTOM LINE UP FRONT", "1.5cm", "3.3cm", "16cm", "0.85cm", size=12, color=ACCENT, bold=True),
         shape(2, bluf_status, "1.5cm", "4.2cm", "30.5cm", "1.6cm", size=18, color=WHITE, bold=True, fill=NAVY),
         shape(2, bluf_body, "1.5cm", "6.1cm", "30.5cm", "11.2cm", size=17, color=TEXT, fill=CARD),
         notes(2, "Read BLUF first. Do not walk chronology before the ask is clear."),

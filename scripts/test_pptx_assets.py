@@ -46,6 +46,12 @@ def main() -> int:
         assert "passed" in out.lower() or "no errors" in out.lower(), out
         text = ocli("view", str(path), "text")
         assert r"\n" not in text.replace("\n", ""), "literal backslash-n should not appear"
+        # BLUF title collision regression: default title + kicker used to merge into FRONTF/FRONTBLUF
+        compact = "".join(text.split()).upper()
+        assert "FRONTF" not in compact and "FRONTBLUF" not in compact, (
+            f"{name}: BLUF title collision (garbled BOTTOM LINE + BLUF title)"
+        )
+        assert "BOTTOMLINEUPFRONT" in compact or "BLUF" in compact, f"{name} missing BLUF band"
         # content guidance
         low = text.lower()
         assert "bluf" in low or "bottom line" in low or "status" in low, f"{name} missing BLUF/status"
