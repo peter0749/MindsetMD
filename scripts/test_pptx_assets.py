@@ -157,11 +157,24 @@ def check_aurora_timeline_data() -> None:
     print("OK aurora timeline data checks")
 
 
+# Presentation chronology for the shared Aurora arc (not file-name order).
+# Index is "story time" — lower = earlier in the multi-deck plot.
+AURORA_PRESENTATION_ORDER = [
+    "01-technical-review",  # 3/20
+    "02-results-demo",  # 5/16
+    "03-management-effectiveness",  # 5/18
+    "06-resource-request",  # 5/20
+    "04-benefit-value",  # 5/25
+    "05-procurement-proposal",  # ~6/05
+    "07-roadmap",  # 6/12
+    "09-period-end-review",  # 6/26 QBR
+    "08-period-start-planning",  # 7/01 Q3 kickoff
+]
+
+
 def check_example_situations_complete() -> None:
     """Every example has a full situation card in data + regenerated deck."""
-    assert set(EXAMPLE_SITUATIONS) == {
-        k for k in SCENARIOS if k.startswith("0")
-    } or set(EXAMPLE_SITUATIONS) == set(SCENARIOS.keys())
+    assert set(EXAMPLE_SITUATIONS) == set(SCENARIOS.keys())
     required = {
         "presenter",
         "decision_maker",
@@ -180,7 +193,59 @@ def check_example_situations_complete() -> None:
         assert not missing, f"{key} situation missing {missing}"
         assert sit["decide_by"].strip(), key
         assert sit["recommend"].strip(), key
+    check_situation_arc_chronology()
     print("OK EXAMPLE_SITUATIONS complete for", len(EXAMPLE_SITUATIONS), "scenarios")
+
+
+def check_situation_arc_chronology() -> None:
+    """prior_arc/next_arc must not invert Aurora presentation order."""
+    order = {k: i for i, k in enumerate(AURORA_PRESENTATION_ORDER)}
+    assert set(order) == set(EXAMPLE_SITUATIONS), "order list must match EXAMPLE_SITUATIONS keys"
+
+    # Forbidden: claiming a later deck as already completed prior (e.g. 09 prior_arc 01→08)
+    # Detect deck numbers mentioned as completed priors after "→" chains that include later indices.
+    def deck_nums(s: str) -> set[int]:
+        return {int(m) for m in re.findall(r"\b0([1-9])\b", s)}
+
+    for key, sit in EXAMPLE_SITUATIONS.items():
+        idx = order[key]
+        prior = sit["prior_arc"]
+        nxt = sit["next_arc"]
+        # 09 must not claim 08 already landed as prior
+        if key == "09-period-end-review":
+            assert "01→08" not in prior and "01->08" not in prior, "09 prior_arc must not invert 08 after 09"
+            assert "not 08" in prior.lower() or "08" not in prior or "after" in prior.lower(), (
+                "09 prior_arc must clarify 08 is not prior"
+            )
+            assert "08" in nxt, "09 next_arc should point to 08 Q3 kickoff"
+        # 05 must not cite deck 09 as prior load growth
+        if key == "05-procurement-proposal":
+            assert "02/09" not in prior, "05 prior_arc must not use ambiguous 02/09 (looks like date/deck09)"
+            assert "deck 09" not in prior.lower() and re.search(r"\b09\b", prior) is None, (
+                "05 prior_arc must not claim deck 09 (after 05) as prior"
+            )
+            assert "04" in prior, "05 prior_arc should cite 04 farm expand"
+        # General: any "01→…→0N" / "01→0N" end deck must be strictly earlier than self
+        for m in re.finditer(r"0([1-9])(?=\s|$|\)|,|·)", prior):
+            num = int(m.group(1))
+            # Only treat as deck id when near arc language, not bare days like 6/30
+            # Skip if this is part of a date (digit/digit already excluded by pattern)
+            end_keys = [k for k in order if k.startswith(f"0{num}-")]
+            if not end_keys:
+                continue
+            end_key = end_keys[0]
+            # Allow mentioning later decks only with explicit "not" / "after this"
+            window = prior[max(0, m.start() - 24) : m.end() + 24].lower()
+            if "not " in window or "after" in window:
+                continue
+            assert order[end_key] <= idx, (
+                f"{key} prior_arc cites deck 0{num} ({end_key}) which is after self in "
+                f"AURORA_PRESENTATION_ORDER (idx {order[end_key]} > {idx})"
+            )
+        # next_arc for 07 should mention 09 before 08 if both appear
+        if key == "07-roadmap" and "08" in nxt and "09" in nxt:
+            assert nxt.find("09") < nxt.find("08"), "07 next_arc should sequence 09 before 08"
+    print("OK situation prior_arc/next_arc chronology")
 
 
 def check_generated_example_04_text() -> None:

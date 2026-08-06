@@ -226,7 +226,7 @@ EXAMPLE_SITUATIONS: dict[str, dict[str, str]] = {
         "if_yes": "Seats land ~3 weeks after PO; p95 queue target <30 min in freeze windows.",
         "if_no_or_delay": "Short extend is expensive band-aid; switch burns schedule.",
         "decide_by": "2026-06-05 (includes vendor lead time)",
-        "prior_arc": "04 farm expand decision; 02/09 load growth",
+        "prior_arc": "04 farm expand decision (5/25–5/30); 02 silicon/sample load growth",
         "next_arc": "07 H2 roadmap assumes seats available",
     },
     "06-resource-request": {
@@ -241,7 +241,7 @@ EXAMPLE_SITUATIONS: dict[str, dict[str, str]] = {
         "if_no_or_delay": "Explicit trade-off: drop USB3 from sample or accept slip — not silent heroics.",
         "decide_by": "2026-05-20 (post-silicon week)",
         "prior_arc": "02 green silicon · 03 people yellow",
-        "next_arc": "08/09 assume req opened; H2 capacity uses productive hire",
+        "next_arc": "Later decks 04–05/07/09/08 assume req opened; H2 uses productive hire",
     },
     "07-roadmap": {
         "presenter": "Alex Chen — EM + program PM",
@@ -255,7 +255,7 @@ EXAMPLE_SITUATIONS: dict[str, dict[str, str]] = {
         "if_no_or_delay": "Hallway commits return; sample and WiFi thrash.",
         "decide_by": "2026-06-12 roadmap review",
         "prior_arc": "01 residual revB · 02 sample · 04/05 farm/seats · 06 hire",
-        "next_arc": "08 Q3 commit locks this map into period plan",
+        "next_arc": "09 Q2 QBR (6/26) then 08 Q3 commit locks this map",
     },
     "08-period-start-planning": {
         "presenter": "Alex Chen — EM, Atlas kickoff",
@@ -282,8 +282,8 @@ EXAMPLE_SITUATIONS: dict[str, dict[str, str]] = {
         "if_yes": "Q3 kickoff (08) has air cover; hire continues; intake rule enforced.",
         "if_no_or_delay": "Same single-thread risk into sample support peak.",
         "decide_by": "This QBR (~2026-06-26) + follow-up into 7/01 kickoff",
-        "prior_arc": "Full H1 arc 01→08 decisions landed or in flight",
-        "next_arc": "08 Q3 execution under endorsed commits",
+        "prior_arc": "H1 arc so far: 01→02→03/06→04→05→07 (not 08 — Q3 kickoff is after this QBR)",
+        "next_arc": "08 Q3 kickoff 7/01 under endorsed commits",
     },
 }
 
