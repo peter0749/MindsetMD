@@ -142,6 +142,35 @@ def check_capacity_claims(errors: list[str], report_lines: list[str]) -> None:
                     report_lines.append(f"BAD {rel}:{line_no}  {snippet!r} missing ctx {ctx_label}")
 
 
+def check_content_template_labeling(errors: list[str]) -> None:
+    """Presentations must be labeled content templates, not visual design systems."""
+    pres = SKILLS / "presentations"
+    # Index + assets entry points
+    for path, needles in (
+        (pres / "README.md", ("內容模板", "美工", "content template")),
+        (pres / "assets" / "README.md", ("內容模板", "美工", "content template")),
+        (pres / "00-style-mnc-and-hsinchu.md", ("內容模板", "預設美工")),
+        (SKILLS / "README.md", ("內容模板", "預設美工排版")),
+    ):
+        body = read(path)
+        for needle in needles:
+            if needle not in body and needle.lower() not in body.lower():
+                fail(f"content-template label missing {needle!r} in {path.relative_to(ROOT)}", errors)
+
+    # Each scenario deck 01–09 must carry the agent banner near the top
+    banner_bits = ("內容模板", "預設美工排版")
+    for n in range(1, 10):
+        matches = list(pres.glob(f"{n:02d}-*.md"))
+        if not matches:
+            fail(f"missing scenario file for {n:02d}", errors)
+            continue
+        path = matches[0]
+        head = read(path)[:900]
+        for bit in banner_bits:
+            if bit not in head:
+                fail(f"{path.relative_to(ROOT)} missing top-of-file banner bit {bit!r}", errors)
+
+
 def check_matrix_topics_in_files(errors: list[str]) -> None:
     """Spot-check that distinguishing rules still exist where matrix claims them."""
     checks = [
@@ -153,9 +182,16 @@ def check_matrix_topics_in_files(errors: list[str]) -> None:
         (SKILLS / "roadmap-planning" / "planning-sense-proactive-framing.md", "plan version"),
         (SKILLS / "cross-team" / "conflict-and-coordination.md", "Not canonical for"),
         (SKILLS / "presentations" / "README.md", "不發明第三套 capacity"),
+        (SKILLS / "presentations" / "README.md", "內容模板"),
         (SKILLS / "presentations" / "06-resource-request.md", "model B"),
         (SKILLS / "presentations" / "07-roadmap.md", "model A"),
         (SKILLS / "README.md", "Apparent “conflicts” that are intentional"),
+        (SKILLS / "README.md", "Never surprise boss"),
+        (SKILLS / "README.md", "healthy public peer conflict"),
+        (SKILLS / "executive-communication" / "decision-ready-updates.md", "Context split"),
+        (SKILLS / "meetings" / "in-meeting-and-follow-through.md", "Context split"),
+        (SKILLS / "cross-team" / "conflict-and-coordination.md", "Context split vs"),
+        (SKILLS / "shared" / "consistency-audit.md", "Content template vs visual design"),
     ]
     for path, needle in checks:
         body = read(path)
@@ -173,6 +209,7 @@ def main() -> int:
     check_audit_structure(errors)
     check_canonical_headers(errors)
     check_capacity_claims(errors, report)
+    check_content_template_labeling(errors)
     check_matrix_topics_in_files(errors)
 
     print("=== capacity claim scan ===")

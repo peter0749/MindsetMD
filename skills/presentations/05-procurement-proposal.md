@@ -1,5 +1,9 @@
 # 情境簡報：採購提案 / Vendor · Tool · License · 設備
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** EDA/IP/雲/儀器/服務合約、續約或新購  
 **聽眾：** 直屬主管、採購、finance、有時資安/法務  
 **時長：** 25–40 min  

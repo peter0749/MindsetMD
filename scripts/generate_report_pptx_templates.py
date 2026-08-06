@@ -165,7 +165,8 @@ def build_deck(path: Path, pack: dict) -> None:
     deck_shell(path)
     cmds: list[dict] = []
     kind = pack.get("kind", "template")
-    badge = "EXAMPLE" if kind == "example" else "TEMPLATE"
+    # Badge = content role only (not a visual design system)
+    badge = "CONTENT-EXAMPLE" if kind == "example" else "CONTENT-TEMPLATE"
     pattern = pack.get("pattern") or {}
     plabel = pattern.get("label") or "See classic-public-cases.md"
     psources = pattern.get("sources") or []
@@ -174,7 +175,10 @@ def build_deck(path: Path, pack: dict) -> None:
         pattern_body += f"• {title}\n  {url}\n"
     pattern_body += (
         "\nHow to use: copy section order and decision verbs; replace with your metrics.\n"
-        "CONTENT TEMPLATE ONLY — do not copy visual design (colors, margins, fonts) as a brand system.\n"
+        "CONTENT TEMPLATE ONLY (內容模板) — NOT default visual design / 不是預設美工排版.\n"
+        "Learn: BLUF, stakes, options, REC, deadlines, story arc.\n"
+        "Do NOT copy: colors, margins, fonts, coordinates, decorative chrome.\n"
+        "Real decks: use your company master; migrate content structure only.\n"
         "In-repo: skills/presentations/classic-public-cases.md · assets/README.md (agent notice)"
     )
     pattern_notes = plabel + "\n" + "\n".join(f"{t}: {u}" for t, u in psources)

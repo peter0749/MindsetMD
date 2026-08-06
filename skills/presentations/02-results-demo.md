@@ -1,5 +1,9 @@
 # 情境簡報：成果發表 / Demo · Launch readout
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** 功能上線、專案階段完成、first silicon / sample 成功、對內 demo day  
 **聽眾：** 部門內 + 主管；可能有產品/業務  
 **時長：** 20–30 min（demo 另計）  

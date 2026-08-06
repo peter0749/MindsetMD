@@ -15,6 +15,8 @@ Meetings create **alignment and decisions**; they do not create work. Work exist
 
 Never surprise your manager in a public meeting. Pre-wire hard news.
 
+**Context split:** This “never surprise” rule is about **your manager** (and rooms where they could be blindsided). Healthy public conflict with **peer teams**—critique plans, not people—is allowed under [(f)](../cross-team/conflict-and-coordination.md) when pre-wired. Do not collapse the two: room scripts protect the boss; (f) keeps partner debate constructive.
+
 ---
 
 ## Part A — In the meeting

@@ -4,19 +4,21 @@
 
 | 標示 | 含義 |
 |------|------|
-| **內容模板 (content template)** | 報告**說什麼、怎麼決策**：BLUF、stakes、options、REC、期限、故事線 |
-| **不是預設美工 (not default design)** | 不要當公司母片／品牌規範；色票、字級、版心可全部丟掉 |
+| **內容模板 (content template)** | 報告**說什麼、怎麼決策**：BLUF、stakes、options、REC、期限、故事線、外商/IC 敘事風格 |
+| **不是預設美工排版 (not default visual design)** | **不是**公司母片／品牌規範／design system；色票、字級、版心、座標可全部丟掉 |
+
+**一句話：** 學「內容風格與決策結構」；**不要**把 sample PPTX 當美編規範照抄。
 
 **Agent 行為：**
 
 1. **要學／要產出的：** 章節意圖、決策包、外商/IC 敘事風格（decision-first、metric、milestone）。  
-2. **不要照抄的：** PPTX 視覺排版、officecli 座標、navy 裝飾、badge 文字。  
+2. **不要照抄的：** PPTX 視覺排版、officecli 座標、navy 裝飾、badge 文字、精確間距。  
 3. 真實交付：用**使用者指定的母片/品牌**；只遷移**內容結構與話術**。  
-4. 權威優先序：**playbook skill (a–f)** → **本目錄 outline MD** → **storyline / situation 欄位** → PPTX 僅作可開啟示範。
+4. 權威優先序：**playbook skill (a–f)** → **本目錄 outline MD** → **storyline / situation 欄位** → PPTX 僅作可開啟示範（載體，非美工 SoT）。
 
 **用途：** 依「情境」套用 **內容骨架**（MD outline + 示範 PPTX）。風格對齊 **科技業外商**（decision-first、metric-heavy、options+ask）與 **竹科 IC**（里程碑 / silicon / customer / PPA·schedule 語彙）。
 
-**不是：** 美工模板、公司機密範本翻版、不可改的 design system。  
+**不是：** 美工模板、預設排版系統、公司機密範本翻版、不可改的 design system。  
 **是：** 每頁**放什麼內容**、結尾**要什麼決策**、example 裡**發生什麼事**。
 
 ---
@@ -37,9 +39,10 @@
 
 風格與投影片紀律： [00-style-mnc-and-hsinchu.md](00-style-mnc-and-hsinchu.md)
 
-**可編輯 PPTX（officecli）：** [assets/README.md](assets/README.md)  
-- 模板：`assets/pptx/templates/01`–`09`  
-- 情境範例（Aurora/NovaSemi 連貫故事）：`assets/pptx/examples/01`–`09`  
+**可編輯 PPTX（內容載體，非美工）：** [assets/README.md](assets/README.md)  
+- 內容骨架占位：`assets/pptx/templates/01`–`09`  
+- 內容範例（Aurora/NovaSemi 連貫故事）：`assets/pptx/examples/01`–`09`  
+- 兩者皆 **content template**；勿當公司 design system。
 **產業簡報結構研究筆記：** [research-deck-norms.md](research-deck-norms.md)  
 **經典公開案例對照（軟體/IC）：** [classic-public-cases.md](classic-public-cases.md)
 

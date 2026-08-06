@@ -1,5 +1,9 @@
 # 情境簡報：效益呈現 / Impact · ROI · 價值說明
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** 續編預算、證明平台/工具投資值得、對非技術高管說「工程在幹嘛」  
 **聽眾：** 部門 head、finance partner、事業單位  
 **時長：** 20–35 min  

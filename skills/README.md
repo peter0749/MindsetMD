@@ -45,7 +45,7 @@ New to the corpus? Read **(a) → (d) → (c)** first; the rest plug into that s
 | Headcount/budget business case | **(b)** resources | Use (a) for framing, (d)/shared for capacity **B** |
 | Influence without authority / stakeholder map | **(f)** cross-team | (b) only short “no budget authority” tips |
 | Value metrics / QBR narrative | **(e)** department value | Reuse (a) for sentence structure |
-| Slide *outlines* by scenario | **presentations/** | Apply a–f; **do not** invent new capacity % or second SOR |
+| Slide *content outlines* by scenario（**內容模板**，非美工） | **presentations/** | Apply a–f; copy **content style only**; **do not** invent new capacity % / second SOR / treat PPTX as design system |
 
 ### Apparent “conflicts” that are intentional context splits
 
@@ -55,7 +55,10 @@ New to the corpus? Read **(a) → (d) → (c)** first; the rest plug into that s
 | Pushback in (c) vs (d) | **Room** → (c); **plan/intake doc** → (d); same displace logic |
 | Influence in (b) vs (f) | (b) = short tips when you lack budget authority; (f) = full multi-party playbook |
 | Escalation in (a) vs (f) | (a) = how sentences/options look; (f) = cross-team packet *content* |
-| Playbook vs presentation | Playbook = behavior; presentation = page order for one meeting type |
+| Playbook vs presentation | Playbook = behavior; presentation = **content** page order for one meeting type (not visual design) |
+| Content template vs sample PPTX chrome | Keep BLUF/options/REC/arc; drop navy/margins/fonts when producing real decks |
+| Catalog `01`–`09` vs Aurora example story order | Scenario **file numbers** = type index; filled examples follow **calendar/decision arc** **01→02→03→06→04→05→07→09→08** ([storyline-guide](presentations/assets/storyline-guide.md)) — e.g. 08 after 09 is intentional |
+| **Never surprise boss** vs **healthy public peer conflict** | **Your manager / skip-level / steering:** never blindside — pre-wire 1:1 first [(a)](executive-communication/decision-ready-updates.md)[(c)](meetings/in-meeting-and-follow-through.md). **Peer / partner teams:** public technical challenge OK when pre-wired and idea-focused [(f)](cross-team/conflict-and-coordination.md). Same “pre-wire” habit; **different target** (boss ≠ peer). |
 
 **Full consistency audit + conflict matrix:** [shared/consistency-audit.md](shared/consistency-audit.md)
 
@@ -67,7 +70,7 @@ skills/
 ├── research-notes.md
 ├── shared/
 │   └── capacity-model.md              ← canonical % buffers
-├── presentations/                     ← 情境簡報骨架（外商 / 竹科）
+├── presentations/                     ← 情境簡報**內容模板**（外商 / 竹科；非美工）
 │   ├── README.md
 │   ├── 00-style-mnc-and-hsinchu.md
 │   └── 01…09-*.md                     ← 技術/成果/管理/效益/採購/資源/路線圖/期初/期末
@@ -85,13 +88,16 @@ skills/
     └── conflict-and-coordination.md   ← (f)  [canonical: influence]
 ```
 
-## Presentation scenarios（簡報 **內容模板** 應用）
+## Presentation scenarios（簡報 **內容模板** — 非美工排版）
 
 需要「這一場報告**說什麼、怎麼決策**」時，不要只讀 a–f 話術—直接開：
 
 **[presentations/README.md](presentations/README.md)**
 
-> **Agent：** 這是 **內容模板**，不是預設美工排版。學敘事/決策包；產出時用公司母片，**勿照抄 sample PPTX 視覺**。
+> **Agent 標示（強制）：** 本區是 **內容模板 (content template)**，**不是**預設美工排版或 design system。  
+> **要學：** 敘事、決策包、章節意圖、外商/IC 內容風格。  
+> **不要：** 照抄 sample PPTX 配色／字級／版心／座標；產出時套**公司母片**，只遷移內容結構與話術。  
+> 每個 `01`–`09` 檔開頭也有同一標示。
 
 | 情境 | 檔案 |
 |------|------|
@@ -105,8 +111,8 @@ skills/
 | 路線圖 | [07-roadmap](presentations/07-roadmap.md) |
 | 期初規劃 | [08-period-start-planning](presentations/08-period-start-planning.md) |
 | 期末呈現 / QBR | [09-period-end-review](presentations/09-period-end-review.md) |
-| **PPTX 模板資產** | [presentations/assets/](presentations/assets/README.md) | officecli 標準投影片 01–09 |
-| **簡報規範研究** | [presentations/research-deck-norms.md](presentations/research-deck-norms.md) | 外商 QBR + IC 里程碑結構 |
+| **PPTX 內容示範**（載體，非美工） | [presentations/assets/](presentations/assets/README.md) |
+| **簡報規範研究** | [presentations/research-deck-norms.md](presentations/research-deck-norms.md) |
 
 ## Skills by theme
 
@@ -125,7 +131,7 @@ skills/
 2. Open the matching skill; use **phrases** and **checklists** in the next real meeting/email.  
 3. Prefer **canonical** skills above when two files mention the same idea.  
 4. Capacity numbers → always [shared/capacity-model.md](shared/capacity-model.md).  
-5. Building a **deck for a known scenario** → [presentations/](presentations/README.md) (slide outlines).  
+5. Building a **deck for a known scenario** → [presentations/](presentations/README.md)（**內容模板**：結構與話術，不是美工）。  
 6. Provenance: [research-notes.md](research-notes.md).
 
 ## IC vs EM (same spine, different weight)

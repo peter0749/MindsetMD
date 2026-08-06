@@ -109,6 +109,10 @@ Synthesized from TPM / PM / staff-eng practice:
 - Invite dissent early (cheaper than silent failure)  
 - Stay malleable; partners flag issues because they’re invested  
 
+**Context split vs “never surprise the boss”:**  
+Public peer/partner challenge (when pre-wired, idea-focused) is **healthy conflict**—this skill owns that.  
+It does **not** license blindsiding **your manager** in steering or skip-level; that rule lives in [(a)](../executive-communication/decision-ready-updates.md) and [(c)](../meetings/in-meeting-and-follow-through.md). Pre-wire peers *and* pre-wire your boss when bad news will land in a room they attend.
+
 ---
 
 ## Escalation packet (when stuck)

@@ -28,8 +28,8 @@ from datetime import date
 from typing import Any
 
 # --- shared example universe constants ---
-EX_META = "Atlas Platform  ·  Project Aurora  ·  NovaSemi  ·  2026"
-EX_FOOTER = "Confidential template example — fictional program data"
+EX_META = "Atlas Platform  ·  Project Aurora  ·  NovaSemi  ·  2026  ·  CONTENT-EXAMPLE"
+EX_FOOTER = "Content example only (not visual design) — fictional program data"
 
 # Machine-checkable anchors (tests import these)
 AURORA_TIMELINE = {
@@ -55,7 +55,7 @@ def T(kicker, title, subtitle, bluf_title, bluf_status, bluf_body, body_slides, 
         "kicker": kicker,
         "title": title,
         "subtitle": subtitle,
-        "meta": "Team X  ·  Program Alpha  ·  Qn YYYY  ·  TEMPLATE — replace placeholders",
+        "meta": "Team X  ·  Program Alpha  ·  Qn YYYY  ·  CONTENT-TEMPLATE — replace placeholders (not visual design)",
         "bluf_title": bluf_title,
         "bluf_status": bluf_status,
         "bluf_body": bluf_body,

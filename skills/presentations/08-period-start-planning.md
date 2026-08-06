@@ -1,5 +1,9 @@
 # 情境簡報：期初規劃 / Kickoff · 季初 · 年初 commit
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** 年初 AOP、季初 planning、專案 kickoff 對上對內  
 **聽眾：** 團隊 + 主管 + 關鍵依賴  
 **時長：** 45–60 min（可拆 pre-read）  

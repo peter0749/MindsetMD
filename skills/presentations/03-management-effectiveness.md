@@ -1,5 +1,9 @@
 # 情境簡報：管理成效 / Org & people effectiveness
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** EM/部門主管對上 1:1、org health review、升遷/校準佐證  
 **聽眾：** 你的 manager、偶有 HRBP / skip-level  
 **時長：** 25–40 min  

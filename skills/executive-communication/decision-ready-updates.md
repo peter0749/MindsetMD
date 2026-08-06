@@ -101,6 +101,10 @@ From “contracting” with your manager:
 - **Don’t wait for them to set the agenda** at higher levels; you drive clarity.  
 - **Never surprise them in a public meeting** — pre-wire bad news 1:1 first.
 
+**Context split (not a conflict with healthy peer debate):**  
+“Never surprise” applies to **your manager** (and steering that could ambush them).  
+Public technical challenge with **peer / partner teams** is fine under [(f)](../cross-team/conflict-and-coordination.md) when pre-wired and idea-focused—do **not** use “never surprise boss” as a reason to avoid honest partner conflict. Target of the rule = **boss**, not every stakeholder.
+
 **1:1 opening that builds trust:**
 
 > “Three items: (1) green on X, (2) yellow risk on Y with options, (3) ask for decision on Z this week.”

@@ -1,5 +1,9 @@
 # 情境簡報：技術報告 / Design · Tech Review
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** Architecture review、design freeze、重大 refactor RFC、DV/bring-up 技術同步  
 **聽眾：** Peer architects、EM、跨隊 tech lead；偶有 skip-level  
 **時長：** 30–45 min  

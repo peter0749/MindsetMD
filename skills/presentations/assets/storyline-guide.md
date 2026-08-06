@@ -1,6 +1,7 @@
 # Aurora multi-deck storyline guide
 
-**內容模板說明：** 本 guide 與 example PPTX 教的是 **故事與決策**，不是美工。Agent 請學「發生什麼 / 要選什麼 / REC / 期限」；產出真實簡報時用對方母片，**勿還原 sample 配色與版心**。
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> 本 guide 與 example PPTX 教的是 **故事與決策**，不是美工。Agent 請學「發生什麼 / 要選什麼 / REC / 期限」；產出真實簡報時用對方母片，**勿還原 sample 配色、字級與版心**。
 
 **Universe:** NovaSemi · **Project Aurora** (5nm connectivity SoC) · **Atlas Platform** team  
 **Presenter (examples):** Alex Chen (EM) → **Decision-maker:** Morgan Lee (VP Eng) unless noted  
@@ -8,6 +9,8 @@
 Cold rule for humans/agents: open each **example** deck → slide **Situation & decision card** → then BLUF. You should be able to decide without inventing facts.
 
 Full chronology anchors: `AURORA_TIMELINE` in `scripts/pptx_deck_data.py`.
+
+**Catalog vs story (not a conflict):** File names `01`–`09` are **scenario-type index**. Filled-example **presentation order** is calendar/decision dependency: **01→02→03→06→04→05→07→09→08** (Q3 kickoff `08` after Q2 QBR `09`). Do not “fix” by renumbering story to match catalog.
 
 ---
 

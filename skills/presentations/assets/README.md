@@ -1,6 +1,6 @@
 # Presentation PPTX assets
 
-## Agent / reader notice — 內容模板，不是美工預設
+## Agent / reader notice — **內容模板**，不是預設美工排版
 
 | 這是 | 這不是 |
 |------|--------|
@@ -8,12 +8,15 @@
 | 要學／要輸出的：**報告內容怎麼寫、怎麼決策** | 不要照抄：顏色、版心、字體、裝飾框、精確座標 |
 | PPTX 僅作 **可打開的示範載體** | 不是公司官方 slide master 或 design library |
 
+**一句話：** 檔名雖有 template/example，語意是 **content template / content example**，**不是**美工範本。
+
 **給 AI Agent 的規則：**
 
 1. 優先複製 **內容風格**：誰講、誰拍板、stakes、options、REC、deadline、arc。  
 2. **不要**把 navy 色塊、card 高度、footer 座標、officecli 版面當成必須還原的規格。  
 3. 產出真實簡報時：套用使用者／公司的母片與品牌；只保留本 skill 的 **敘事與決策結構**。  
-4. Markdown outline（`01`–`09`）與 [storyline-guide.md](storyline-guide.md) 比 PPTX 美編更「權威」於內容。
+4. Markdown outline（`01`–`09`）與 [storyline-guide.md](storyline-guide.md) 比 PPTX 美編更「權威」於內容。  
+5. 成功標準 = 決策可讀、結構完整；**不是** pixel-match sample 檔。
 
 ---
 

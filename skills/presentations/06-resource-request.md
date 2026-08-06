@@ -1,5 +1,9 @@
 # 情境簡報：爭取資源 / Headcount · Budget · Air cover
 
+> **標示：內容模板 (content template) — 不是預設美工排版**  
+> Agent **只學**報告內容與決策風格：BLUF、stakes、options、REC、期限、章節意圖、故事線。  
+> **不要**照抄 sample PPTX 的配色、字級、版心、座標或裝飾；真實交付用公司母片，只遷移本檔結構與話術。詳見 [presentations/README](README.md)「內容模板 ≠ 美工」。
+
 **場合：** 年度/季度 HC 申請、臨時增援、預算、要求老闆公開站台  
 **聽眾：** 直屬主管、資源委員會、偶有 HR  
 **時長：** 20–30 min（預讀一頁更佳）  

@@ -2,14 +2,16 @@
 
 **Audience of this note:** 做向上 / 部門內簡報的 tech lead、EM、PM、設計/驗證主管、**AI Agent**。
 
-## 內容模板 vs 美工
+## 標示：內容模板 (content template) — 不是預設美工排版
 
-本檔與 `assets/pptx/*` 是 **內容風格 / 決策骨架** 參考：
+本檔與 `assets/pptx/*` 是 **內容風格 / 決策骨架** 參考，**不是**公司母片或 design system。
 
-- **要對齊的：** BLUF、options+ask、milestone 語彙、預先 pre-wire、少頁主軸。  
-- **不要當成強制美編的：** 任何 sample PPTX 的色票、字級、卡片間距、officecli 座標。
+| Agent 要學 | Agent 不要照抄 |
+|------------|----------------|
+| BLUF、options+ask、milestone 語彙、pre-wire、少頁主軸 | sample PPTX 色票、字級、卡片間距、officecli 座標 |
+| 標題句怎麼寫、決策頁固定欄位 | navy 裝飾、badge 文字、精確版心 |
 
-真實產出請用組織母片；只遷移**敘事與決策結構**。
+真實產出請用**組織母片 / 品牌**；只遷移**敘事與決策結構**。MD outline 權威性高於 PPTX 外觀。
 
 ---
 
@@ -36,7 +38,7 @@
 
 ---
 
-## 投影片版面紀律（兩種口音共用）
+## 投影片**內容**紀律（結構與敘事，不是美工排版）
 
 | 規則 | 做法 |
 |------|------|
