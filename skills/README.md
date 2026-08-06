@@ -85,11 +85,13 @@ skills/
     └── conflict-and-coordination.md   ← (f)  [canonical: influence]
 ```
 
-## Presentation scenarios（簡報應用）
+## Presentation scenarios（簡報 **內容模板** 應用）
 
-需要「這一場簡報怎麼排頁」時，不要只讀 a–f 話術—直接開：
+需要「這一場報告**說什麼、怎麼決策**」時，不要只讀 a–f 話術—直接開：
 
 **[presentations/README.md](presentations/README.md)**
+
+> **Agent：** 這是 **內容模板**，不是預設美工排版。學敘事/決策包；產出時用公司母片，**勿照抄 sample PPTX 視覺**。
 
 | 情境 | 檔案 |
 |------|------|

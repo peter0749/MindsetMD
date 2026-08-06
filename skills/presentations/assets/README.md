@@ -1,11 +1,28 @@
 # Presentation PPTX assets
 
+## Agent / reader notice — 內容模板，不是美工預設
+
+| 這是 | 這不是 |
+|------|--------|
+| **內容模板 (content template)**：章節順序、BLUF、決策包、話術風格、故事線 | **預設美工排版 (visual design system)**：不可改的母片、品牌色、字級、間距 |
+| 要學／要輸出的：**報告內容怎麼寫、怎麼決策** | 不要照抄：顏色、版心、字體、裝飾框、精確座標 |
+| PPTX 僅作 **可打開的示範載體** | 不是公司官方 slide master 或 design library |
+
+**給 AI Agent 的規則：**
+
+1. 優先複製 **內容風格**：誰講、誰拍板、stakes、options、REC、deadline、arc。  
+2. **不要**把 navy 色塊、card 高度、footer 座標、officecli 版面當成必須還原的規格。  
+3. 產出真實簡報時：套用使用者／公司的母片與品牌；只保留本 skill 的 **敘事與決策結構**。  
+4. Markdown outline（`01`–`09`）與 [storyline-guide.md](storyline-guide.md) 比 PPTX 美編更「權威」於內容。
+
+---
+
 Two packs per scenario (01–09):
 
 | Pack | Path | Purpose |
 |------|------|---------|
-| **Template** | [`pptx/templates/`](pptx/templates/) | Placeholder structure — copy and fill |
-| **Example** | [`pptx/examples/`](pptx/examples/) | Filled **Aurora / NovaSemi / Atlas** storyline simulation |
+| **Content template** | [`pptx/templates/`](pptx/templates/) | Placeholder **sections & phrases** — fill with real program data |
+| **Content example** | [`pptx/examples/`](pptx/examples/) | Filled **Aurora / NovaSemi / Atlas** storyline (decision-readable) |
 
 **Out of scope:** personal performance / annual self-review.
 
@@ -71,10 +88,32 @@ Full case list: [../classic-public-cases.md](../classic-public-cases.md) · norm
 | 08 | Period start | [pptx/templates/08-period-start-planning.pptx](pptx/templates/08-period-start-planning.pptx) | [pptx/examples/08-period-start-planning.pptx](pptx/examples/08-period-start-planning.pptx) |
 | 09 | Period end / QBR | [pptx/templates/09-period-end-review.pptx](pptx/templates/09-period-end-review.pptx) | [pptx/examples/09-period-end-review.pptx](pptx/examples/09-period-end-review.pptx) |
 
-## Layout rules (optimized)
+## Content spine (what to keep) vs layout (what to ignore)
+
+**Keep (content template):**
+
+```text
+Cover (context)
+→ Pattern provenance (optional for real decks)
+→ Situation & decision card (examples; real decks: who/stakes/decision)
+→ BLUF / status / recommendation
+→ Body evidence
+→ Options + REC (if a choice is required)
+→ Decision & ask (owner + date)
+```
+
+**Ignore when producing for a real company (layout chrome):**
+
+- Midnight navy palette, card fills, exact cm margins, footer styling  
+- officecli shape stacking quirks  
+- Decorative “TEMPLATE / EXAMPLE” badges  
+
+Generator layout notes below are **only** for regenerating these sample PPTX files.
+
+### Sample-file layout rules (generator only)
 
 - No default title placeholder on content/BLUF slides (prevents kicker collision).
-- Cover → **Pattern provenance** → BLUF → body → options → ask.
+- Cover → **Pattern provenance** → (examples: Situation card) → BLUF → body → options → ask.
 - Margins ≥ 1.4cm; navy status bar; options tables with navy header.
 - Real newlines only (never literal `\n` in text).
 

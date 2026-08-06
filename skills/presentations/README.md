@@ -1,9 +1,23 @@
-# Presentation scenarios — 向上 / 部門內簡報骨架
+# Presentation scenarios — 向上 / 部門內簡報 **內容模板**
 
-**用途：** 依「情境」套用 slide outline（非 PowerPoint 檔）。風格對齊 **科技業外商**（Google / Qualcomm / AMD 類：decision-first、metric-heavy、options+ask）與 **台灣竹科 IC 設計台商**（聯發科類：里程碑 / silicon / customer / yield·power·schedule 語彙、期初期末審慎）。
+## 給 Agent / 使用者：內容模板 ≠ 美工排版
 
-**不是：** 美工模板、公司機密範本翻版。  
-**是：** 可直接複製成投影片標題 + 每頁放什麼 + 結尾要什麼決策。
+| 標示 | 含義 |
+|------|------|
+| **內容模板 (content template)** | 報告**說什麼、怎麼決策**：BLUF、stakes、options、REC、期限、故事線 |
+| **不是預設美工 (not default design)** | 不要當公司母片／品牌規範；色票、字級、版心可全部丟掉 |
+
+**Agent 行為：**
+
+1. **要學／要產出的：** 章節意圖、決策包、外商/IC 敘事風格（decision-first、metric、milestone）。  
+2. **不要照抄的：** PPTX 視覺排版、officecli 座標、navy 裝飾、badge 文字。  
+3. 真實交付：用**使用者指定的母片/品牌**；只遷移**內容結構與話術**。  
+4. 權威優先序：**playbook skill (a–f)** → **本目錄 outline MD** → **storyline / situation 欄位** → PPTX 僅作可開啟示範。
+
+**用途：** 依「情境」套用 **內容骨架**（MD outline + 示範 PPTX）。風格對齊 **科技業外商**（decision-first、metric-heavy、options+ask）與 **竹科 IC**（里程碑 / silicon / customer / PPA·schedule 語彙）。
+
+**不是：** 美工模板、公司機密範本翻版、不可改的 design system。  
+**是：** 每頁**放什麼內容**、結尾**要什麼決策**、example 裡**發生什麼事**。
 
 ---
 
@@ -60,7 +74,8 @@ Backup   細節進 appendix（被問再翻）
 
 1. **不發明第三套 capacity %** — 只引用 [capacity-model](../shared/capacity-model.md)：路線圖/期初/管理負荷用 **A**；HC 簡報用 **B**。  
 2. **不發明第二套 SOR** — BLUF / Options / Rec / Ask 一律跟 (a)。  
-3. **Deck = 應用層**；行為細節以 playbook 為準。衝突時以 [consistency-audit](../shared/consistency-audit.md) + index canonical 表為準。
+3. **Deck = 內容應用層**（不是美編層）；行為細節以 playbook 為準。衝突時以 [consistency-audit](../shared/consistency-audit.md) + index canonical 表為準。  
+4. **內容模板優先於 PPTX 外觀** — Agent 生成報告時只保證決策可讀與結構完整，不要求還原 sample 檔的視覺。
 
 ---
 

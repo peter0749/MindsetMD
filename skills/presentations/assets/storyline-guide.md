@@ -1,5 +1,7 @@
 # Aurora multi-deck storyline guide
 
+**內容模板說明：** 本 guide 與 example PPTX 教的是 **故事與決策**，不是美工。Agent 請學「發生什麼 / 要選什麼 / REC / 期限」；產出真實簡報時用對方母片，**勿還原 sample 配色與版心**。
+
 **Universe:** NovaSemi · **Project Aurora** (5nm connectivity SoC) · **Atlas Platform** team  
 **Presenter (examples):** Alex Chen (EM) → **Decision-maker:** Morgan Lee (VP Eng) unless noted  
 

@@ -12,13 +12,14 @@ Open **[skills/README.md](skills/README.md)** for:
 
 Capacity numbers live in one place: **[skills/shared/capacity-model.md](skills/shared/capacity-model.md)**.
 
-**情境簡報骨架**（技術報告、成果、管理成效、效益、採購、資源、路線圖、期初/期末，外商×竹科風格）：  
+**情境簡報 — 內容模板**（非美工預設；技術/成果/管理/效益/採購/資源/路線圖/期初/期末）：  
 **[skills/presentations/README.md](skills/presentations/README.md)**
 
-**可編輯 PPTX（officecli 模板 + 情境範例）：**  
-**[skills/presentations/assets/README.md](skills/presentations/assets/README.md)** · 研究筆記 [research-deck-norms.md](skills/presentations/research-deck-norms.md)
+**示範 PPTX（內容載體；可換公司母片，勿當 design system）：**  
+**[skills/presentations/assets/README.md](skills/presentations/assets/README.md)** · 故事線 [storyline-guide.md](skills/presentations/assets/storyline-guide.md) · 研究 [research-deck-norms.md](skills/presentations/research-deck-norms.md)
 
-> 個人績效 / 年終自述模板：**尚未納入**（已明確延後）。
+> Agent：學 **報告內容與決策風格**；**不要**照抄 PPTX 排版/配色。  
+> 個人績效 / 年終自述：**尚未納入**（已明確延後）。
 
 ## Objective themes covered
 

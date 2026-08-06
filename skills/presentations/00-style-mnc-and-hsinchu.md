@@ -1,6 +1,15 @@
-# Deck style: 外商科技 × 竹科 IC 設計
+# Deck style: 外商科技 × 竹科 IC 設計（內容風格）
 
-**Audience of this note:** 做向上 / 部門內簡報的 tech lead、EM、PM、設計/驗證主管。
+**Audience of this note:** 做向上 / 部門內簡報的 tech lead、EM、PM、設計/驗證主管、**AI Agent**。
+
+## 內容模板 vs 美工
+
+本檔與 `assets/pptx/*` 是 **內容風格 / 決策骨架** 參考：
+
+- **要對齊的：** BLUF、options+ask、milestone 語彙、預先 pre-wire、少頁主軸。  
+- **不要當成強制美編的：** 任何 sample PPTX 的色票、字級、卡片間距、officecli 座標。
+
+真實產出請用組織母片；只遷移**敘事與決策結構**。
 
 ---
 

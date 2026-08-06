@@ -174,7 +174,8 @@ def build_deck(path: Path, pack: dict) -> None:
         pattern_body += f"• {title}\n  {url}\n"
     pattern_body += (
         "\nHow to use: copy section order and decision verbs; replace with your metrics.\n"
-        "In-repo: skills/presentations/classic-public-cases.md"
+        "CONTENT TEMPLATE ONLY — do not copy visual design (colors, margins, fonts) as a brand system.\n"
+        "In-repo: skills/presentations/classic-public-cases.md · assets/README.md (agent notice)"
     )
     pattern_notes = plabel + "\n" + "\n".join(f"{t}: {u}" for t, u in psources)
 
