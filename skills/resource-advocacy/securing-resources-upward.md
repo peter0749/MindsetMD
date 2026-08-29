@@ -71,6 +71,19 @@ One well-justified hire beats a vague “need five.” Inflated asks train leade
 
 ---
 
+## PR/FAQ and single-threaded owner (resource flavor)
+
+A material new-product or dedicated-owner ask should survive the Internal FAQ list in [amazon-mapping](../shared/amazon-mapping.md) — especially: customer, cost of “no,” alternatives, input metric, and **who is full-time on this**.
+
+**Single-threaded owner as a resource case** (not the RACI playbook — that is [(f)](../cross-team/conflict-and-coordination.md)):
+
+> “This will not move as a side job. We need a named owner at ≥80% and a boundary: they do not also run [other]. If we cannot fund that, we should not pretend we launched a program.”
+
+Use headcount context **B (20–30% unplanned)** for the HC math. Two-pizza history lives under STO in (f); do not open a separate “small team” skill here.
+
+PR/FAQ is the **go/no-go pack** for the investment; the six-pager is for the decision *meeting* — see [(a)](../executive-communication/decision-ready-updates.md). Do not merge them.
+
+
 ## Phrase bank
 
 **Opening the ask:**
@@ -203,3 +216,6 @@ Short list only—full playbook is **[(f)](../cross-team/conflict-and-coordinati
 - *Executive Communication* (advocate without seeming self-serving) — EM Tools: https://www.em-tools.io/engineering-manager-responsibilities/executive-communication  
 - *Roadmap Planning* (capacity, trade-offs) — EM Tools: https://www.em-tools.io/engineering-manager-responsibilities/roadmap-planning  
 - *How To Influence Without Authority As A TPM* — Mario Gerard: https://www.mariogerard.com/how-to-influence-without-authority-as-a-tpm/  
+- Working Backwards PR/FAQ — https://workingbackwards.com/concepts/working-backwards-pr-faq-process/
+- Single-threaded leadership (concept) — https://workingbackwards.com/concepts/
+- Amazon mapping: [../shared/amazon-mapping.md](../shared/amazon-mapping.md)

@@ -111,6 +111,23 @@ Public technical challenge with **peer / partner teams** is fine under [(f)](../
 
 ---
 
+## Carrier: deck vs six-page memo
+
+Same canonical BLUF / SOR (above). Different medium.
+
+| Door | Carrier | Why |
+|------|---------|-----|
+| **Type 2** (reversible) | Slack / one-pager / short deck | Speed. 2015 letter: most decisions are two-way doors and should be made quickly by high-judgment people. |
+| **Type 1** (nearly irreversible) | Written **six-page narrative**; meeting starts in silent **study hall** | 2017 letter: narrative forces what-matters-first; a good memo often takes a **week or more**, not an afternoon of slides. |
+
+**Tenets** (named constraints) belong in the Options/Rec block — “we will not do X even if it is faster” — so they do not become a second template. Map: [../shared/amazon-mapping.md](../shared/amazon-mapping.md).
+
+**Disagree and commit** (2016 letter): state the disagreement, then sincerely commit — including when *you* are the boss. If objectives are truly misaligned, **escalate immediately**; do not grind until whoever is exhausted “wins.”
+
+**Phrase:**
+> “This is Type 1 (hard to unwind): I’ll send a six-pager; we read silently, then decide. Type 2 calls this week I’ll BLUF in Slack.”
+
+
 ## When *not* to manage up hard (safety valve)
 
 Managing up is a tool, not a personality. **Throttle** when:
@@ -182,6 +199,11 @@ Decision / resource needed: … (or “none this week”)
 
 ---
 
+## Internal FAQ questions (for Type 1 / go/no-go packets)
+
+When the ask is a new product, a one-way door, or a material resource call, the packet should survive the question list in [amazon-mapping](../shared/amazon-mapping.md) (customer, not-building, owner, displace, input metric, alternatives). That list is **questions**, not a new slide outline — answers still use SOR above.
+
+
 ## See also
 
 - **Meetings / 對上說不 / follow-through:** [../meetings/in-meeting-and-follow-through.md](../meetings/in-meeting-and-follow-through.md)  
@@ -198,3 +220,7 @@ Decision / resource needed: … (or “none this week”)
 - *Communication Skills for Software Engineers: 5 Frameworks* — Utterskills: https://utterskills.com/blog/communication-skills-for-software-engineers  
 - *How to Communicate With Executives* (BLUF, pre-read, escalation formula) — Orvo: https://www.getorvo.com/learn/executive-communication-strategy  
 - *Executive Communication: Unlock Resources and Trust* — EM Tools: https://www.em-tools.io/engineering-manager-responsibilities/executive-communication  
+- 2015 letter (Type 1 / Type 2 doors) — SEC: https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
+- 2016 letter (Disagree and commit; escalate misalignment) — https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders
+- 2017 letter (six-page narratives + study hall) — https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders
+- Amazon mapping (corpus): [../shared/amazon-mapping.md](../shared/amazon-mapping.md)

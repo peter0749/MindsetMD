@@ -83,6 +83,20 @@ Synthesized from TPM / PM / staff-eng practice:
 
 ---
 
+## Single-threaded owner (who + boundary)
+
+When a cross-team outcome has many part-time helpers and no one whose *job* is the result, coordination explodes. **STO:** one person full-time (or clearly majority-time) with a **boundary** — they are not also running the adjacent program.
+
+Two-pizza teams are the historical predecessor (small enough to feed with two pizzas). Treat that as flavor under STO; **do not** add a seventh skill.
+
+**Resource case** for actually funding that owner: [(b)](../resource-advocacy/securing-resources-upward.md).
+
+**Phrase:**
+> “Until someone is single-threaded on [outcome], we will keep rediscovering the same alignment meeting. Name the owner and what they will *stop* doing.”
+
+Author-site: https://workingbackwards.com/concepts/
+
+
 ## In-conflict meeting scripts
 
 **Open with shared goal:**
@@ -114,6 +128,17 @@ Public peer/partner challenge (when pre-wired, idea-focused) is **healthy confli
 It does **not** license blindsiding **your manager** in steering or skip-level; that rule lives in [(a)](../executive-communication/decision-ready-updates.md) and [(c)](../meetings/in-meeting-and-follow-through.md). Pre-wire peers *and* pre-wire your boss when bad news will land in a room they attend.
 
 ---
+
+## Disagree and commit — then escalate misalignment
+
+From the 2016 shareholder letter (not only a meeting trick):
+
+1. Voice the disagreement.  
+2. **Commit** once the call is made (no pocket veto).  
+3. If teams have **different objectives**, that is misalignment — **escalate immediately**. Do not wait until the more exhausted side “wins.”
+
+This is the cross-team content of the same rule in [(a)](../executive-communication/decision-ready-updates.md) / [(c)](../meetings/in-meeting-and-follow-through.md). Packet fields below still apply.
+
 
 ## Escalation packet (when stuck)
 
@@ -206,3 +231,6 @@ Escalate to **solve a trade-off**, not to “win.” After the decision: [(c) 2-
 - *How To Influence Without Authority As A TPM* — Mario Gerard: https://www.mariogerard.com/how-to-influence-without-authority-as-a-tpm/  
 - *The PM's Guide to Influence Without Authority* — QuestWorks: https://www.questworks.io/blog/product-manager-influence-without-authority.html  
 - *The Staff Engineer Toolkit* (org awareness, influence, ADRs) — Hands-on Architects: https://handsonarchitects.com/blog/2025/staff-engineer-toolkit/  
+- 2016 letter (Disagree and commit; escalate misalignment) — https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders
+- Single-threaded leadership (concept) — https://workingbackwards.com/concepts/
+- Amazon mapping: [../shared/amazon-mapping.md](../shared/amazon-mapping.md)

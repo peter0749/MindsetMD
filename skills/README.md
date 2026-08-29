@@ -46,6 +46,14 @@ New to the corpus? Read **(a) → (d) → (c)** first; the rest plug into that s
 | Influence without authority / stakeholder map | **(f)** cross-team | (b) only short “no budget authority” tips |
 | Value metrics / QBR narrative | **(e)** department value | Reuse (a) for sentence structure |
 | Slide *content outlines* by scenario（**內容模板**，非美工） | **presentations/** | Apply a–f; copy **content style only**; **do not** invent new capacity % / second SOR / treat PPTX as design system |
+| **Amazon mechanisms** (PR/FAQ, six-pager, doors, STO, input metrics…) | [shared/amazon-mapping](shared/amazon-mapping.md) + owning a–f skill | Fold into existing themes; **not** a seventh theme; **not** punt-labs/prfaq |
+| **Six-page memo + study hall** | **(a)** language + **(c)** meeting | Type 1 / high-stakes decision meeting |
+| **PR/FAQ** (future PR + Internal FAQ) | **(d)(b)** go/no-go | Internal FAQ *questions* also feed (a) decision package |
+| **Input metrics** | **(e)** definition | WBR / monthly review *shape* → (c) |
+| **Single-threaded owner** | **(f)** who + boundary | Dedicated-owner resource case → (b); two-pizza is STO predecessor |
+| **Tenets** | **(a)** | Named constraints on options; do not fork SOR |
+| **COE** (written after-action) | **(c)** light | Next to 2h summary; not an incident theme |
+| **Bar Raiser** | **Parked** | No hiring theme in a–f |
 
 ### Apparent “conflicts” that are intentional context splits
 
@@ -59,6 +67,8 @@ New to the corpus? Read **(a) → (d) → (c)** first; the rest plug into that s
 | Content template vs sample PPTX chrome | Keep BLUF/options/REC/arc; drop navy/margins/fonts when producing real decks |
 | Catalog `01`–`09` vs Aurora example story order | Scenario **file numbers** = type index; filled examples follow **calendar/decision arc** **01→02→03→06→04→05→07→09→08** ([storyline-guide](presentations/assets/storyline-guide.md)) — e.g. 08 after 09 is intentional |
 | **Never surprise boss** vs **healthy public peer conflict** | **Your manager / skip-level / steering:** never blindside — pre-wire 1:1 first [(a)](executive-communication/decision-ready-updates.md)[(c)](meetings/in-meeting-and-follow-through.md). **Peer / partner teams:** public technical challenge OK when pre-wired and idea-focused [(f)](cross-team/conflict-and-coordination.md). Same “pre-wire” habit; **different target** (boss ≠ peer). |
+| **Deck BLUF** vs **Amazon memo** | Everyday / Type 2 → short BLUF deck or one-pager. Type 1 and new-product go/no-go → written narrative (six-pager or PR/FAQ). Same [(a)](executive-communication/decision-ready-updates.md) Options→Rec→Ask; different carrier. Map: [amazon-mapping](shared/amazon-mapping.md). |
+| **PR/FAQ** vs **six-pager** | Two artifacts. PR/FAQ = customer-backwards go/no-go **(d)(b)**. Six-pager + study hall = decision meeting **(a)(c)**. Do not collapse into one template. |
 
 **Full consistency audit + conflict matrix:** [shared/consistency-audit.md](shared/consistency-audit.md)
 
@@ -69,7 +79,8 @@ skills/
 ├── README.md                          ← you are here
 ├── research-notes.md
 ├── shared/
-│   └── capacity-model.md              ← canonical % buffers
+│   ├── capacity-model.md              ← canonical % buffers
+│   └── amazon-mapping.md              ← Amazon mechanisms → a–f (not a 7th theme)
 ├── presentations/                     ← 情境簡報**內容模板**（外商 / 竹科；非美工）
 │   ├── README.md
 │   ├── 00-style-mnc-and-hsinchu.md
@@ -133,6 +144,7 @@ skills/
 4. Capacity numbers → always [shared/capacity-model.md](shared/capacity-model.md).  
 5. Building a **deck for a known scenario** → [presentations/](presentations/README.md)（**內容模板**：結構與話術，不是美工）。  
 6. Provenance: [research-notes.md](research-notes.md).
+7. Amazon-style memo / PR/FAQ / doors / STO → [shared/amazon-mapping.md](shared/amazon-mapping.md), then the owning a–f skill. Do not add a seventh theme.
 
 ## IC vs EM (same spine, different weight)
 

@@ -26,6 +26,7 @@
 |------|------|
 | `skills/README.md` | Index, op chain, **canonical ownership**, context-split legend |
 | `skills/shared/capacity-model.md` | Sole numeric capacity SoT (A/B) |
+| `skills/shared/amazon-mapping.md` | Amazon mechanisms → a–f; memo vs deck; PR/FAQ ≠ six-pager |
 | `skills/shared/consistency-audit.md` | This audit |
 | `skills/executive-communication/decision-ready-updates.md` | (a) BLUF/SOR/GDSB |
 | `skills/resource-advocacy/securing-resources-upward.md` | (b) resource cases; capacity **B** |
@@ -67,6 +68,9 @@ Status legend: **consistent** (same rule everywhere) · **context-separated** (t
 | 18 | Dual “canonical for escalation” wording | (f) old header vs index | **fixed** | (f) no longer claims sole “escalation packet” ownership |
 | 19 | Example `prior_arc` / `next_arc` vs presentation catalog order `01`–`09` | `pptx_deck_data.EXAMPLE_SITUATIONS`, `storyline-guide.md`, `test_pptx_assets.py` | **context-separated** | **Story chronology ≠ catalog number order.** Aurora presentation order is **01→02→03→06→04→05→07→09→08** (`AURORA_PRESENTATION_ORDER`). prior_arc must not cite a later deck as already done (e.g. 09 must not claim 08 as prior). Enforced by asset tests |
 | 20 | Lagging KPI dates vs deck ask deadlines | `EXAMPLE_SITUATIONS`, `AURORA_TIMELINE` | **consistent** | Evidence dates always pre-date that deck’s `decide_by` / ask deadline (asset tests) |
+| 21 | Deck BLUF vs Amazon six-pager / PR/FAQ | amazon-mapping, (a), (c), (d), presentations/README | **context-separated** | Type 2 / weekly → deck or one-pager; Type 1 / new-product go/no-go → written memo. Same (a) SOR; different carrier |
+| 22 | PR/FAQ vs six-pager | amazon-mapping, (d)(b) vs (a)(c) | **context-separated** | PR/FAQ = customer-backwards go/no-go; six-pager + study hall = decision meeting. Do not collapse (punt-labs did) |
+
 
 ---
 
@@ -141,6 +145,15 @@ Every deck outline (`00`–`09`), `presentations/README`, and `assets/README` la
 
 **Not a conflict:** Opening only `07-roadmap.md` does not require knowing 03→06 sequencing; arcs apply when using **filled example** packs / storyline guide for agent decision practice.
 
+### 4.7 Amazon mechanisms (matrix 21–22)
+
+**SoT:** `skills/shared/amazon-mapping.md`
+
+- Not a seventh theme. Ownership table lives there; playbooks keep tactics.
+- Capacity A/B unchanged. Input metrics (e) do not fork %.
+- Bar Raiser parked (no hiring theme).
+- punt-labs/prfaq, Cagan four-risks, Kahneman checklist: out of corpus.
+
 ---
 
 ## 5. Fixes applied this pass
@@ -157,6 +170,8 @@ Every deck outline (`00`–`09`), `presentations/README`, and `assets/README` la
 | Checker: `check_content_template_labeling` | Regressions on missing content-template notice |
 | Matrix rows 19–20 + §4.6 for example arcs | Catalog order ≠ story chronology; tests enforce prior_arc |
 | Matrix 16: Context-split callouts in (a)(c)(f) + index row | Never-surprise boss ≠ ban on healthy peer conflict |
+| Amazon mapping page + weave into a–f | Provenance gap; memo vs deck labeled (matrix 21–22) |
+
 
 ---
 
@@ -190,4 +205,4 @@ Manual: re-read matrix §3; open every path in “Files checked”; confirm dist
 | Every apparent conflict context-separated or fixed | Yes — matrix §3 incl. 12b, 19–20 |
 | No unlabeled mutually exclusive directives on same decision | Yes — after §5 |
 | Conflict matrix topic → status | Yes — §3 |
-| Capacity A/B · SOR/escalation · 對上說不 · influence b/f · content-template · arcs | Yes — §3 rows 1,5,7,8,12/12b,19 + deep-dives §4 |
+| Capacity A/B · SOR/escalation · 對上說不 · influence b/f · content-template · arcs · Amazon memo vs deck | Yes — §3 rows 1,5,7,8,12/12b,19,21–22 + deep-dives §4 |

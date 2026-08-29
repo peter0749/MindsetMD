@@ -12,6 +12,8 @@ Open **[skills/README.md](skills/README.md)** for:
 
 Capacity numbers live in one place: **[skills/shared/capacity-model.md](skills/shared/capacity-model.md)**.
 
+Amazon mechanisms (PR/FAQ, six-pager, doors, STO, input metrics) fold into a–f — map: **[skills/shared/amazon-mapping.md](skills/shared/amazon-mapping.md)**. Not a seventh theme.
+
 **情境簡報 — 內容模板 (content template)**（**不是**預設美工排版；技術/成果/管理/效益/採購/資源/路線圖/期初/期末）：  
 **[skills/presentations/README.md](skills/presentations/README.md)**
 

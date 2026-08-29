@@ -156,6 +156,25 @@ Notes: <link>
 
 ---
 
+## Decision meetings: doors, study hall, disagree-and-commit
+
+**Type 1 vs Type 2 (2015 letter):** If walking through the door is hard to undo, slow down and write. If it is reversible, decide in the room with BLUF — do not run a heavyweight process on Type 2 calls (that is how large orgs get slow).
+
+**Study hall (2017 letter):** For a six-pager, the first 20 minutes are **silent reading**. The meeting starts after everyone has the same narrative — not after a slide walkthrough. Budget a week to write a good memo; do not fake it with slides the night before.
+
+**Disagree and commit (2016 letter):**
+- Say the disagreement out loud (boss included).
+- Then commit sincerely — not “fine, but I’ll pocket-veto.”
+- If it is **true misalignment of objectives**, escalate immediately. Do not wait until whoever is more exhausted “wins.”
+
+Room script:
+> “We disagree. I’m asking for disagree-and-commit on B through Friday. If this is actually different goals, we escalate to [name] today with a one-pager — we will not grind this.”
+
+**WBR / monthly review shape:** Review **input metrics** the team can actually move (definition lives in [(e)](../department-value/presenting-department-value.md)). This skill only owns the *meeting*: pre-read numbers, decide interventions, write back owners. Do not dump output vanity in the room.
+
+**COE (light):** After a real miss, a short written Correction of Error sits next to the 2-hour summary: what happened, customer impact, root cause, what we will change, owner + date. Not a new incident-management theme. AWS writeup: https://aws.amazon.com/blogs/mt/why-you-should-develop-a-correction-of-error-coe/
+
+
 ## Cadence recommendations
 
 | Touchpoint | Purpose |
@@ -227,3 +246,8 @@ Notes: <link>
 - *Managing upwards* (communication contracting with your manager) — The Engineering Manager: https://www.theengineeringmanager.com/management-101/managing-upwards/  
 - *Action items: owner, due date, success criteria* — Ticnote guide: https://ticnote.com/en/blog/action-items-in-meeting-minutes-guide  
   (canonical pattern also in widespread meeting-minutes practice: single owner, date, track status)  
+- 2015 letter (Type 1 / Type 2) — SEC: https://www.sec.gov/Archives/edgar/data/1018724/000119312516530910/d168744dex991.htm
+- 2016 letter (Disagree and commit; escalate misalignment) — https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders
+- 2017 letter (six-pager + study hall) — https://www.aboutamazon.com/news/company-news/2017-letter-to-shareholders
+- AWS Correction of Error — https://aws.amazon.com/blogs/mt/why-you-should-develop-a-correction-of-error-coe/
+- Amazon mapping: [../shared/amazon-mapping.md](../shared/amazon-mapping.md)
