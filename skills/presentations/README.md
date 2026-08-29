@@ -78,6 +78,7 @@ Backup   細節進 appendix（被問再翻）
 1. **不發明第三套 capacity %** — 只引用 [capacity-model](../shared/capacity-model.md)：路線圖/期初/管理負荷用 **A**；HC 簡報用 **B**。  
 2. **不發明第二套 SOR** — BLUF / Options / Rec / Ask 一律跟 (a)。  
 3. **Deck = 內容應用層**（不是美編層）；行為細節以 playbook 為準。衝突時以 [consistency-audit](../shared/consistency-audit.md) + index canonical 表為準。  
+4. **Type 1 / 新產品 go/no-go 可以是 memo 不是 deck** — 六頁 or PR/FAQ；決策句型仍跟 (a)。對照：[amazon-mapping](../shared/amazon-mapping.md)。不要為 Amazon 另做第七套簡報骨架。  
 4. **內容模板優先於 PPTX 外觀** — Agent 生成報告時只保證決策可讀與結構完整，不要求還原 sample 檔的視覺。
 
 ---

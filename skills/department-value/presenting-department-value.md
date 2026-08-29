@@ -45,6 +45,16 @@ Structure updates as: **progress vs commitments → risks → requests** (pyrami
 
 ---
 
+## Input metrics (canonical here)
+
+**Output metrics** (revenue, share, NPS) are lagging — useful, but late. **Input metrics** are the controllable drivers you actually staff and inspect (e.g. selection in-stock, latency of a path, % of capacity on named outcomes). Leadership should see both; **this skill owns the definitions**. Weekly inspection of those inputs is a meeting in [(c)](../meetings/in-meeting-and-follow-through.md).
+
+**Phrase:**
+> “The output we care about is [X]. The input we can move this quarter is [Y]; here is the owner and the weekly number.”
+
+Do not replace the capacity **A/B** model with a third % table. Input metrics sit *on top of* [capacity-model](../shared/capacity-model.md), they do not rewrite it. Author-site: https://workingbackwards.com/concepts/
+
+
 ## Metrics portfolio (pick a few, not a dump)
 
 Balance **three lenses**:
@@ -155,3 +165,5 @@ Ask your manager **how they write performance reviews** and what evidence they u
 - *Managing upwards* (how manager is measured; visibility of your work) — The Engineering Manager: https://www.theengineeringmanager.com/management-101/managing-upwards/  
 - *Writing engineering strategy* (direction as value, not only tickets) — StaffEng: https://staffeng.com/guides/engineering-strategy/  
 - *How to Communicate With Executives* (audience tailoring, relationship deposits) — Orvo: https://www.getorvo.com/learn/executive-communication-strategy  
+- Input metrics (Working Backwards concepts) — https://workingbackwards.com/concepts/
+- Amazon mapping: [../shared/amazon-mapping.md](../shared/amazon-mapping.md)

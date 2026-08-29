@@ -75,6 +75,25 @@ Product owns more of **what/why**; engineering owns **how/when** feasibility. Ne
 
 ---
 
+## Working backwards vs skills-forward
+
+**Skills-forward:** start from what the team already knows how to build, then look for a customer.  
+**Working backwards:** start from a specific customer experience, then discover what must be built (and what you will **not** build).
+
+For a **new product or new theme**, write a short **PR/FAQ** *before* the roadmap line exists:
+
+1. Future press release (&lt;1 page, customer language, as if it already shipped).  
+2. Internal FAQ that survives the [must-answer list](../shared/amazon-mapping.md).  
+3. Then sequence it on the plan with capacity **A**, or send the resource case to [(b)](../resource-advocacy/securing-resources-upward.md).
+
+This is a go/no-go thinking tool — **not** a slide factory and **not** the six-pager used in decision meetings (that lives in [(a)](../executive-communication/decision-ready-updates.md) + [(c)](../meetings/in-meeting-and-follow-through.md)).
+
+**Operating cadence (OP1/OP2-style):** once or twice a year, teams propose initiatives against **input-metric** goals; leadership approves/denies and allocates people/money. That is this skill’s planning loop. Weekly metric *meetings* are [(c)](../meetings/in-meeting-and-follow-through.md); metric *definitions* are [(e)](../department-value/presenting-department-value.md). Author-site cadence: https://workingbackwards.com/concepts/
+
+**Phrase:**
+> “We’re working backwards from [customer outcome], not from the stack we already have. PR draft in the FAQ pack; if we fund it, it displaces [X] on the quarter plan.”
+
+
 ## Writing that creates planning presence
 
 From staff-eng practice: **writing is thinking**. Use short docs with:
@@ -224,3 +243,6 @@ Silent “just this one small thing” is not a process.
 - *Communication Skills for Software Engineers* (decision-first, options, cost of inaction) — Utterskills: https://utterskills.com/blog/communication-skills-for-software-engineers  
 - *Writing engineering strategy* — StaffEng / Will Larson: https://staffeng.com/guides/engineering-strategy/  
 - *The Staff Engineer Toolkit* (writing, milestones, org awareness) — Hands-on Architects: https://handsonarchitects.com/blog/2025/staff-engineer-toolkit/  
+- Working Backwards PR/FAQ — https://workingbackwards.com/concepts/working-backwards-pr-faq-process/
+- Amazon operating cadence / concepts — https://workingbackwards.com/concepts/
+- Amazon mapping: [../shared/amazon-mapping.md](../shared/amazon-mapping.md)

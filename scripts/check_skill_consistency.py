@@ -32,6 +32,7 @@ def check_required_files(errors: list[str]) -> None:
     required = [
         SKILLS / "shared" / "capacity-model.md",
         SKILLS / "shared" / "consistency-audit.md",
+        SKILLS / "shared" / "amazon-mapping.md",
         SKILLS / "README.md",
         SKILLS / "executive-communication" / "decision-ready-updates.md",
         SKILLS / "resource-advocacy" / "securing-resources-upward.md",
@@ -192,6 +193,15 @@ def check_matrix_topics_in_files(errors: list[str]) -> None:
         (SKILLS / "meetings" / "in-meeting-and-follow-through.md", "Context split"),
         (SKILLS / "cross-team" / "conflict-and-coordination.md", "Context split vs"),
         (SKILLS / "shared" / "consistency-audit.md", "Content template vs visual design"),
+        (SKILLS / "shared" / "amazon-mapping.md", "Two Amazon artifacts"),
+        (SKILLS / "shared" / "amazon-mapping.md", "punt-labs"),
+        (SKILLS / "README.md", "Deck BLUF"),
+        (SKILLS / "executive-communication" / "decision-ready-updates.md", "Type 1"),
+        (SKILLS / "meetings" / "in-meeting-and-follow-through.md", "study hall"),
+        (SKILLS / "roadmap-planning" / "planning-sense-proactive-framing.md", "Working backwards"),
+        (SKILLS / "department-value" / "presenting-department-value.md", "Input metrics"),
+        (SKILLS / "cross-team" / "conflict-and-coordination.md", "Single-threaded owner"),
+        (SKILLS / "presentations" / "README.md", "amazon-mapping"),
     ]
     for path, needle in checks:
         body = read(path)
